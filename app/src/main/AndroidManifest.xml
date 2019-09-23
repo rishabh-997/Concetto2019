@@ -16,6 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashScreen.MVP.SplashActivity"/>
+        <activity android:name=".EventPage.MVP.EventActivity"
+            android:screenOrientation="portrait"
+            android:label="Events"/>
+        <activity android:name=".SpecialNightPage.MVP.SpecialNightActivity"
+            android:screenOrientation="portrait"
+            android:label="Special Night"/>
+        <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
+            android:screenOrientation="portrait"
+            android:label="Tech Talks"/>
+        <activity android:name=".WorkshopPage.MVP.WorkshopActivity"
+            android:screenOrientation="portrait"
+            android:label="Workshops"/>
     </application>
 
 </manifest>

@@ -1,42 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_purple"/>
 
     <Button
         android:id="@+id/button_event"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="12dp"
-        android:text="Events" />
+        android:gravity="center"
+        android:text="Events"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_purple"
+        android:layout_below="@+id/button_event"/>
 
     <Button
         android:id="@+id/button_workshop"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/button_event"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="12dp"
-        android:text="Workshops" />
+        android:gravity="center"
+        android:text="Workshops"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_purple"
+        android:layout_below="@+id/button_workshop"/>
 
     <Button
         android:id="@+id/button_techtalks"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/button_workshop"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="12dp"
-        android:text="TechTalk" />
+        android:gravity="center"
+        android:text="TechTalk"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_purple"
+        android:layout_below="@+id/button_techtalks"/>
 
     <Button
         android:id="@+id/button_specialnight"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_below="@id/button_techtalks"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="12dp"
-        android:text="SpecialNight" />
+        android:gravity="center"
+        android:text="SpecialNight"
+        android:textSize="18sp" />
 
 </RelativeLayout>
