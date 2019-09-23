@@ -6,15 +6,18 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
+import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.rishabh.concetto2019.EventPage.MVP.EventActivity;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.SpecialNightPage.MVP.SpecialNightActivity;
-import com.rishabh.concetto2019.SplashScreen.MVP.SplashActivity;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
 
@@ -31,6 +34,11 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     TextView specialnight;
     @BindView(R.id.button_workshop)
     TextView workshop;
+    @BindView(R.id.drawerlayout)
+    FlowingDrawer mDrawer;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
 
     HomePageContract.presenter presenter;
     float dx, current, original;
@@ -42,6 +50,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         setContentView(R.layout.activity_homepage);
         ButterKnife.bind(this);
         presenter = new HomePagePresenter(this);
+        setSupportActionBar(toolbar);
         setup();
     }
 
@@ -57,6 +66,30 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         techtalk.setOnTouchListener(this);
         workshop.setOnTouchListener(this);
         specialnight.setOnTouchListener(this);
+
+        toolbar.setNavigationIcon(R.drawable.ic_wb_incandescent_black_24dp);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawer.openMenu();
+            }
+        });
+
+
+        mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
+        mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
+            @Override
+            public void onDrawerStateChange(int oldState, int newState) {
+                if (newState == ElasticDrawer.STATE_CLOSED) {
+                    Log.i("MainActivity", "Drawer STATE_CLOSED");
+                }
+            }
+
+            @Override
+            public void onDrawerSlide(float openRatio, int offsetPixels) {
+                Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
+            }
+        });
     }
 
     @Override

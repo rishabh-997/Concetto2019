@@ -1,82 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relativelayout"
+<com.mxn.soul.flowingdrawer_core.FlowingDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:edMenuBackground="#dddddd"
+    app:edMenuSize="260dp"
+    app:edPosition="1">
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_purple"/>
 
-    <Button
-        android:id="@+id/button_event"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:text="Events"
-        android:textSize="18sp" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_purple"
-        android:layout_below="@+id/button_event"/>
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/toolbar">
 
-    <Button
-        android:id="@+id/button_workshop"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/button_event"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:text="Workshops"
-        android:textSize="18sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_purple"
-        android:layout_below="@+id/button_workshop"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:text="ghgjded"
+                    android:textSize="20sp"
+                    android:paddingTop="4dp"
+                    android:id="@+id/toolbar_text"
+                    android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/button_techtalks"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/button_workshop"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:text="TechTalk"
-        android:textSize="18sp" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:layout_width="130dp"
-        android:layout_height="40dp"
-        android:layout_alignParentRight="true"
-        android:layout_centerInParent="true"
-        android:background="@android:color/holo_purple"
-        android:layout_below="@+id/button_techtalks"/>
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_purple" />
 
-    <Button
-        android:id="@+id/button_specialnight"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/button_techtalks"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:text="SpecialNight"
-        android:textSize="18sp" />
+        <Button
+            android:id="@+id/button_event"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="Events"
+            android:textSize="18sp" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/button_event"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_purple" />
+
+        <Button
+            android:id="@+id/button_workshop"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/button_event"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="Workshops"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/button_workshop"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_purple" />
+
+        <Button
+            android:id="@+id/button_techtalks"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/button_workshop"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="TechTalk"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/button_techtalks"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@android:color/holo_purple" />
+
+        <Button
+            android:id="@+id/button_specialnight"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/button_techtalks"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="SpecialNight"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <com.mxn.soul.flowingdrawer_core.FlowingMenuLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/id_container_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
+
+</com.mxn.soul.flowingdrawer_core.FlowingDrawer>

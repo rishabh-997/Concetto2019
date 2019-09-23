@@ -7,9 +7,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme">
-        <activity android:name=".HomePage.MVP.HomePageActivity">
+        android:roundIcon="@mipmap/ic_launcher_round">
+        <activity android:name=".HomePage.MVP.HomePageActivity"
+            android:theme="@style/AppTheme2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,16 +19,20 @@
         <activity android:name=".SplashScreen.MVP.SplashActivity"/>
         <activity android:name=".EventPage.MVP.EventActivity"
             android:screenOrientation="portrait"
-            android:label="Events"/>
+            android:label="Events"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".SpecialNightPage.MVP.SpecialNightActivity"
             android:screenOrientation="portrait"
-            android:label="Special Night"/>
+            android:label="Special Night"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
             android:screenOrientation="portrait"
-            android:label="Tech Talks"/>
+            android:label="Tech Talks"
+            android:theme="@style/AppTheme"/>
         <activity android:name=".WorkshopPage.MVP.WorkshopActivity"
             android:screenOrientation="portrait"
-            android:label="Workshops"/>
+            android:label="Workshops"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
