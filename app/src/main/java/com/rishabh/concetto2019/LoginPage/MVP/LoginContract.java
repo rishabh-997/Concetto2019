@@ -1,4 +1,12 @@
-package com.rishabh.concetto2019;
+package com.rishabh.concetto2019.LoginPage.MVP;
 
-public class LoginContract {
+public class LoginContract
+{
+    interface  view{
+
+    }
+
+    interface presenter{
+
+    }
 }
