@@ -18,25 +18,25 @@
         android:background="@mipmap/background">
 
         <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="60dp"
             android:background="@android:color/transparent"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:id="@+id/toolbar">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="textStart"
-                    android:text="Concetto"
-                    android:textSize="25sp"
-                    android:paddingTop="4dp"
+                <ImageView
                     android:id="@+id/toolbar_text"
-                    android:textColor="@android:color/white" />
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:paddingTop="4dp"
+                    android:textSize="25sp"
+                    android:src="@drawable/concetto"
+                    android:scaleType="centerCrop"/>
 
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
@@ -45,8 +45,39 @@
             android:id="@+id/animated_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="top|center_horizontal"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true"
+            android:layout_gravity="top|center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/toolbar"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/day1"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/day2"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/day3"/>
+
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="130dp"
@@ -62,8 +93,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="16dp"
-            android:gravity="center"
             android:background="@drawable/events_slider"
+            android:gravity="center"
             android:textSize="18sp" />
 
         <TextView
@@ -81,8 +112,8 @@
             android:layout_below="@id/button_event"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="16dp"
-            android:gravity="center"
             android:background="@drawable/workshop_slider"
+            android:gravity="center"
             android:textSize="18sp" />
 
         <TextView
@@ -100,18 +131,18 @@
             android:layout_below="@id/button_workshop"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="16dp"
-            android:gravity="center"
             android:background="@drawable/techtalk_slider"
+            android:gravity="center"
             android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/moon_image"
-            android:layout_width="200dp"
-            android:src="@drawable/moon"
-            android:layout_height="200dp"
+            android:layout_width="700dp"
+            android:layout_height="700dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="-80dp"
-            android:layout_marginBottom="-80dp"/>
+            android:layout_marginLeft="-250dp"
+            android:layout_marginBottom="-360dp"
+            android:src="@drawable/moon" />
 
     </RelativeLayout>
 
@@ -122,7 +153,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
 

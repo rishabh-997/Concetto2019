@@ -84,7 +84,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         techtalk.setOnTouchListener(this);
         workshop.setOnTouchListener(this);
 
-        toolbar.setNavigationIcon(R.drawable.drawericon);
+        toolbar.setNavigationIcon(R.drawable.hamburgericon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
