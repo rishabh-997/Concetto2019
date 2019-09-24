@@ -25,8 +25,8 @@ public class PlanetAnimationView extends View
         private float speed;
     }
 
-    private static final int BASE_SPEED_DP_PER_S = 200;
-    private static final int COUNT = 10;
+    private static final int BASE_SPEED_DP_PER_S = 50;
+    private static final int COUNT = 32;
     private static final int SEED = 1337;
 
     /** The minimum scale of a star */
@@ -42,10 +42,10 @@ public class PlanetAnimationView extends View
     private final Random mRnd = new Random(SEED);
 
     private TimeAnimator mTimeAnimator;
-    private Drawable mDrawable,mDrawable2,mDrawable3;
+    private Drawable mDrawable,mDrawable2,mDrawable4,mDrawable5;
 
     private float mBaseSpeed;
-    private float mBaseSize,mBaseSize2,mBaseSize3;
+    private float mBaseSize,mBaseSize2,mBaseSize4,mBaseSize5;
     private long mCurrentPlayTime;
 
     public PlanetAnimationView(Context context) {
@@ -64,12 +64,15 @@ public class PlanetAnimationView extends View
     }
 
     private void init() {
-        mDrawable = ContextCompat.getDrawable(getContext(), R.drawable.planet1);
-        mDrawable2 = ContextCompat.getDrawable(getContext(), R.drawable.planet2);
-        mDrawable3 = ContextCompat.getDrawable(getContext(), R.drawable.star);
-        mBaseSize = Math.max(mDrawable.getIntrinsicWidth(), mDrawable.getIntrinsicHeight()) / 3f;
-        mBaseSize2 = Math.max(mDrawable2.getIntrinsicWidth(), mDrawable2.getIntrinsicHeight()) / 3f;
-        mBaseSize3 = Math.max(mDrawable3.getIntrinsicWidth(), mDrawable2.getIntrinsicHeight()) / 3f;
+        mDrawable = ContextCompat.getDrawable(getContext(), R.drawable.star1);
+        mDrawable2 = ContextCompat.getDrawable(getContext(), R.drawable.star2);
+        mDrawable4 = ContextCompat.getDrawable(getContext(), R.drawable.star4);
+        mDrawable5 = ContextCompat.getDrawable(getContext(), R.drawable.star5);
+
+        mBaseSize  = Math.max(mDrawable.getIntrinsicWidth() , mDrawable.getIntrinsicHeight())  / 2f;
+        mBaseSize2 = Math.max(mDrawable2.getIntrinsicWidth(), mDrawable2.getIntrinsicHeight()) / 5f;
+        mBaseSize4 = Math.max(mDrawable4.getIntrinsicWidth(), mDrawable4.getIntrinsicHeight()) / 5f;
+        mBaseSize5 = Math.max(mDrawable5.getIntrinsicWidth(), mDrawable5.getIntrinsicHeight()) / 2f;
         mBaseSpeed = BASE_SPEED_DP_PER_S * getResources().getDisplayMetrics().density;
     }
 
@@ -110,14 +113,14 @@ public class PlanetAnimationView extends View
 
             // Prepare the size and alpha of the drawable
             final int size = Math.round(starSize);
-            if(i%3==0) {
+            if(i%5==0) {
                 mDrawable.setBounds(-size, -size, size, size);
                 mDrawable.setAlpha(Math.round(255 * planet.alpha));
 
                 // Draw the star to the canvas
                 mDrawable.draw(canvas);
             }
-            else if (i%3==1)
+            else if (i%5==1)
             {
                 mDrawable2.setBounds(-size, -size, size, size);
                 mDrawable2.setAlpha(Math.round(255 * planet.alpha));
@@ -125,14 +128,21 @@ public class PlanetAnimationView extends View
                 // Draw the star to the canvas
                 mDrawable2.draw(canvas);
             }
-            else
+            else if (i%5==3)
             {
-                mDrawable3.setBounds(-size, -size, size, size);
-                mDrawable3.setAlpha(Math.round(255 * planet.alpha));
+                mDrawable4.setBounds(-size, -size, size, size);
+                mDrawable4.setAlpha(Math.round(255 * planet.alpha));
 
                 // Draw the star to the canvas
-                mDrawable3.draw(canvas);
+                mDrawable4.draw(canvas);
+            }
+            else
+            {
+                mDrawable5.setBounds(-size, -size, size, size);
+                mDrawable5.setAlpha(Math.round(255 * planet.alpha));
 
+                // Draw the star to the canvas
+                mDrawable5.draw(canvas);
             }
             i++;
 

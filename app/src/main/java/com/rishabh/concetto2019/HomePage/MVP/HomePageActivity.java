@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
@@ -73,7 +74,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         workshop.setOnTouchListener(this);
         specialnight.setOnTouchListener(this);
 
-        toolbar.setNavigationIcon(R.drawable.ic_wb_incandescent_black_24dp);
+        toolbar.setNavigationIcon(R.drawable.drawericon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,34 +121,33 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                     retreat = 0;
                 break;
             case MotionEvent.ACTION_UP:
-                if(retreat == 1) {
-                    v.setX(original+dx);
-                }
-                else{
-                    if(v.getId() == R.id.button_workshop){
+                if(lastAction == MotionEvent.ACTION_DOWN)
+                    Toast.makeText(this, "swipe to open", Toast.LENGTH_SHORT).show();
+                else {
+                    if (retreat == 1) {
+                        v.setX(original + dx);
+                    } else {
+                        if (v.getId() == R.id.button_workshop) {
 
-                        startActivity(new Intent(this, WorkshopActivity.class));
-                        overridePendingTransition(R.anim.slidein_to_left,R.anim.slideout_to_left);
-                        finish();
-                    }
-                    else if(v.getId() == R.id.button_specialnight){
+                            startActivity(new Intent(this, WorkshopActivity.class));
+                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
+                            finish();
+                        } else if (v.getId() == R.id.button_specialnight) {
 
-                        startActivity(new Intent(this, SpecialNightActivity.class));
-                        overridePendingTransition(R.anim.slidein_to_left,R.anim.slideout_to_left);
-                        finish();
-                    }
-                    else if(v.getId() == R.id.button_event){
+                            startActivity(new Intent(this, SpecialNightActivity.class));
+                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
+                            finish();
+                        } else if (v.getId() == R.id.button_event) {
 
-                        startActivity(new Intent(this, EventActivity.class));
-                        overridePendingTransition(R.anim.slidein_to_left,R.anim.slideout_to_left);
-                        finish();
-                    }
-                    else if(v.getId() == R.id.button_techtalks)
-                    {
+                            startActivity(new Intent(this, EventActivity.class));
+                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
+                            finish();
+                        } else if (v.getId() == R.id.button_techtalks) {
 
-                        startActivity(new Intent(this, TechTalkActivity.class));
-                        overridePendingTransition(R.anim.slidein_to_left,R.anim.slideout_to_left);
-                        finish();
+                            startActivity(new Intent(this, TechTalkActivity.class));
+                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
+                            finish();
+                        }
                     }
                 }
                 break;
