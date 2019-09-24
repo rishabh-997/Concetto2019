@@ -24,6 +24,10 @@ import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * Created by Rishabh Agarwal on 23rd Septemer 2019
+ */
+
 public class HomePageActivity extends AppCompatActivity implements HomePageContract.view, View.OnTouchListener {
 
     @BindView(R.id.button_event)
@@ -38,7 +42,8 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     FlowingDrawer mDrawer;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
+    @BindView(R.id.animated_view)
+    PlanetAnimationView animationView;
 
     HomePageContract.presenter presenter;
     float dx, current, original;
@@ -51,6 +56,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         ButterKnife.bind(this);
         presenter = new HomePagePresenter(this);
         setSupportActionBar(toolbar);
+        animationView.resume();
         setup();
     }
 
@@ -90,8 +96,10 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
             }
         });
+
     }
 
+    //handles touch events
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
