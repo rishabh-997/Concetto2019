@@ -11,6 +11,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +25,8 @@ import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.SpecialNightPage.MVP.SpecialNightActivity;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
+
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,8 +41,6 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     TextView event;
     @BindView(R.id.button_techtalks)
     TextView techtalk;
-    @BindView(R.id.button_specialnight)
-    TextView specialnight;
     @BindView(R.id.button_workshop)
     TextView workshop;
     @BindView(R.id.drawerlayout)
@@ -45,10 +49,14 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     Toolbar toolbar;
     @BindView(R.id.animated_view)
     PlanetAnimationView animationView;
+    @BindView(R.id.moon_image)
+    ImageView moon_rotating;
 
     HomePageContract.presenter presenter;
     float dx, current, original;
     int lastAction, width, retreat = 0;
+    Random random = new Random();
+    Animation rotation;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +66,9 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         presenter = new HomePagePresenter(this);
         setSupportActionBar(toolbar);
         animationView.resume();
+        rotation = AnimationUtils.loadAnimation(this,R.anim.rotate);
+        rotation.setFillAfter(true);
+        moon_rotating.startAnimation(rotation);
         setup();
     }
 
@@ -72,7 +83,6 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         event.setOnTouchListener(this);
         techtalk.setOnTouchListener(this);
         workshop.setOnTouchListener(this);
-        specialnight.setOnTouchListener(this);
 
         toolbar.setNavigationIcon(R.drawable.drawericon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -114,7 +124,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 lastAction = MotionEvent.ACTION_MOVE;
                 current = event.getRawX();
                 float change = ((original - current) / width * 100);
-                if (change > 0 && change < 30) {
+                if (change > 0 && change < 25) {
                     retreat = 1;
                     v.setX(event.getRawX() + dx);
                 } else
@@ -132,11 +142,6 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                             startActivity(new Intent(this, WorkshopActivity.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
                             finish();
-                        } else if (v.getId() == R.id.button_specialnight) {
-
-                            startActivity(new Intent(this, SpecialNightActivity.class));
-                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
-                            finish();
                         } else if (v.getId() == R.id.button_event) {
 
                             startActivity(new Intent(this, EventActivity.class));
@@ -148,6 +153,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
                             finish();
                         }
+                        v.setX(original + dx);
                     }
                 }
                 break;

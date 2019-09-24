@@ -25,8 +25,8 @@ public class PlanetAnimationView extends View
         private float speed;
     }
 
-    private static final int BASE_SPEED_DP_PER_S = 50;
-    private static final int COUNT = 32;
+    private static final int BASE_SPEED_DP_PER_S = 80;
+    private static final int COUNT = 35;
     private static final int SEED = 1337;
 
     /** The minimum scale of a star */
@@ -67,11 +67,11 @@ public class PlanetAnimationView extends View
         mDrawable = ContextCompat.getDrawable(getContext(), R.drawable.star1);
         mDrawable2 = ContextCompat.getDrawable(getContext(), R.drawable.star2);
         mDrawable4 = ContextCompat.getDrawable(getContext(), R.drawable.star4);
-        mDrawable5 = ContextCompat.getDrawable(getContext(), R.drawable.star5);
+        mDrawable5 = ContextCompat.getDrawable(getContext(), R.drawable.star4);
 
         mBaseSize  = Math.max(mDrawable.getIntrinsicWidth() , mDrawable.getIntrinsicHeight())  / 2f;
-        mBaseSize2 = Math.max(mDrawable2.getIntrinsicWidth(), mDrawable2.getIntrinsicHeight()) / 5f;
-        mBaseSize4 = Math.max(mDrawable4.getIntrinsicWidth(), mDrawable4.getIntrinsicHeight()) / 5f;
+        mBaseSize2 = Math.max(mDrawable2.getIntrinsicWidth(), mDrawable2.getIntrinsicHeight()) / 2f;
+        mBaseSize4 = Math.max(mDrawable4.getIntrinsicWidth(), mDrawable4.getIntrinsicHeight()) / 2f;
         mBaseSize5 = Math.max(mDrawable5.getIntrinsicWidth(), mDrawable5.getIntrinsicHeight()) / 2f;
         mBaseSpeed = BASE_SPEED_DP_PER_S * getResources().getDisplayMetrics().density;
     }
@@ -242,7 +242,7 @@ public class PlanetAnimationView extends View
 
         // Set the Y position
         // Start at the bottom of the view
-        planet.y = viewHeight;
+        planet.y = viewHeight-700;
         // The Y value is in the center of the star, add the size
         // to make sure it starts outside of the view bound
         planet.y += planet.scale * mBaseSize;
