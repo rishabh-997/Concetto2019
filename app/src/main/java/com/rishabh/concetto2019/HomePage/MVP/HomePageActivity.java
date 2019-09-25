@@ -2,6 +2,7 @@ package com.rishabh.concetto2019.HomePage.MVP;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Rect;
+import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -100,7 +101,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
             }
         });
-
+    setupMenu();
     }
 
     //handles touch events
@@ -152,5 +153,36 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 break;
         }
         return false;
+    }
+    private void setupMenu() {
+        FragmentManager fm = getSupportFragmentManager();
+        Floating_menu f_menu = (Floating_menu) fm.findFragmentById(R.id.id_container_menu);
+        if (f_menu == null) {
+            f_menu = new Floating_menu();
+            fm.beginTransaction().add(R.id.id_container_menu, f_menu).commit();
+        }
+
+//        mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
+//            @Override
+//            public void onDrawerStateChange(int oldState, int newState) {
+//                if (newState == ElasticDrawer.STATE_CLOSED) {
+//                    Log.i("HomePageActivity", "Drawer STATE_CLOSED");
+//                }
+//            }
+//
+//            @Override
+//            public void onDrawerSlide(float openRatio, int offsetPixels) {
+//                Log.i("HomePageActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
+//            }
+//        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mDrawer.isMenuVisible()) {
+            mDrawer.closeMenu();
+        } else {
+            super.onBackPressed();
+        }
     }
 }
