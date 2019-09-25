@@ -61,8 +61,9 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     final Fragment fragment1 = new ScheduleFragment1();
     final Fragment fragment2 = new ScheduleFragment2();
     final Fragment fragment3 = new ScheduleFragment3();
-    Fragment active;
-    final FragmentManager fm = getSupportFragmentManager();
+    final FragmentManager fm1 = getSupportFragmentManager();
+    final FragmentManager fm2 = getSupportFragmentManager();
+    final FragmentManager fm3 = getSupportFragmentManager();
 
     HomePageContract.presenter presenter;
     float dx, current, original;
@@ -80,9 +81,9 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         rotation = AnimationUtils.loadAnimation(this,R.anim.rotate);
         rotation.setFillAfter(true);
         moon_rotating.startAnimation(rotation);
-        fm.beginTransaction().add(R.id.schedule_container,fragment1,"1").hide(fragment1).commit();
-        fm.beginTransaction().add(R.id.schedule_container,fragment2,"2").hide(fragment2).commit();
-        fm.beginTransaction().add(R.id.schedule_container,fragment3,"3").hide(fragment3).commit();
+        fm1.beginTransaction().add(R.id.schedule_container,fragment1,"1").hide(fragment1).commit();
+        fm2.beginTransaction().add(R.id.schedule_container,fragment2,"2").hide(fragment2).commit();
+        fm3.beginTransaction().add(R.id.schedule_container,fragment3,"3").hide(fragment3).commit();
         setup();
     }
 
@@ -110,15 +111,15 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
 
         schedule_day1.setOnClickListener(v -> {
             fragment_state = 1;
-            fm.beginTransaction().show(fragment1).commit();
+            fm1.beginTransaction().show(fragment1).commit();
         });
-        schedule_day1.setOnClickListener(v -> {
+        schedule_day2.setOnClickListener(v -> {
             fragment_state = 2;
-            fm.beginTransaction().show(fragment2).commit();
+            fm2.beginTransaction().show(fragment2).commit();
         });
-        schedule_day1.setOnClickListener(v -> {
+        schedule_day3.setOnClickListener(v -> {
             fragment_state = 3;
-            fm.beginTransaction().show(fragment3).commit();
+            fm3.beginTransaction().show(fragment3).commit();
         });
 
         //flowing drawer
@@ -194,17 +195,17 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         if(fragment_state==1)
         {
             fragment_state = 0;
-            fm.beginTransaction().hide(fragment1).commit();
+            fm1.beginTransaction().hide(fragment1).commit();
         }
-        if(fragment_state==2)
+        else if(fragment_state==2)
         {
             fragment_state = 0;
-            fm.beginTransaction().hide(fragment2).commit();
+            fm2.beginTransaction().hide(fragment2).commit();
         }
-        if(fragment_state==3)
+        else if(fragment_state==3)
         {
             fragment_state = 0;
-            fm.beginTransaction().hide(fragment3).commit();
+            fm3.beginTransaction().hide(fragment3).commit();
         }
         else{
               super.onBackPressed();
