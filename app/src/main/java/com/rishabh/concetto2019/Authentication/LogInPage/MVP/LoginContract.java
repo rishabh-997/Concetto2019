@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.LoginPage.MVP;
+package com.rishabh.concetto2019.Authentication.LogInPage.MVP;
 
 public class LoginContract
 {

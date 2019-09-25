@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.EventDetailPage.MVP;
+package com.rishabh.concetto2019.EventDetail.MVP;
 
 
 import com.rishabh.concetto2019.Utilities.Networking.ClientAPI;

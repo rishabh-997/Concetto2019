@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.LoginPage.MVP;
+package com.rishabh.concetto2019.Authentication.LogInPage.MVP;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;

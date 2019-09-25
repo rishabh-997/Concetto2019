@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.SignupPage.MVP;
+package com.rishabh.concetto2019.Authentication.SignUpPage.MVP;
 
 public class SignupContract
 {

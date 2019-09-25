@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.SignupPage.MVP;
+package com.rishabh.concetto2019.EventDetail.MVP;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -8,16 +8,16 @@ import com.rishabh.concetto2019.R;
 
 import butterknife.ButterKnife;
 
-public class SignupActivity extends AppCompatActivity implements SignupContract.view {
+public class EventDetailActivity extends AppCompatActivity implements EventDetailContract.view {
 
-    SignupContract.presenter presenter;
+    EventDetailContract.presenter presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signuppage);
+        setContentView(R.layout.activity_eventdetailpage);
 
-        presenter = new SignupPresenter(this);
+        presenter = new EventDetailPresenter(this);
         ButterKnife.bind(this);
     }
 
