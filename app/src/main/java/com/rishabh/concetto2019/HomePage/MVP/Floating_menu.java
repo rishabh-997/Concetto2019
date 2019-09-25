@@ -22,7 +22,7 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
     View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         view= inflater.inflate(R.layout.fragment_menu, container, false);
 
         NavigationView navigationView=(NavigationView)view.findViewById(R.id.vNavigation);
@@ -32,7 +32,8 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+    {
         return false;
     }
 }

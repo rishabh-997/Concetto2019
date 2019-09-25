@@ -93,7 +93,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/events_slider"
+            android:background="@mipmap/events_slider"
             android:gravity="center"
             android:textSize="18sp" />
 
@@ -112,7 +112,7 @@
             android:layout_below="@id/button_event"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/workshop_slider"
+            android:background="@mipmap/workshop_slider"
             android:gravity="center"
             android:textSize="18sp" />
 
@@ -131,7 +131,7 @@
             android:layout_below="@id/button_workshop"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/techtalk_slider"
+            android:background="@mipmap/techtalk_slider"
             android:gravity="center"
             android:textSize="18sp" />
 

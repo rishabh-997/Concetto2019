@@ -1,5 +1,4 @@
 package com.rishabh.concetto2019.HomePage.MVP;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Rect;
@@ -13,21 +12,16 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.rishabh.concetto2019.EventPage.MVP.EventActivity;
 import com.rishabh.concetto2019.R;
-import com.rishabh.concetto2019.SpecialNightPage.MVP.SpecialNightActivity;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
-
 import java.util.Random;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -91,7 +85,6 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 mDrawer.openMenu();
             }
         });
-
 
         mDrawer.setTouchMode(ElasticDrawer.TOUCH_MODE_BEZEL);
         mDrawer.setOnDrawerStateChangeListener(new ElasticDrawer.OnDrawerStateChangeListener() {
