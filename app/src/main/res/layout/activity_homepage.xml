@@ -41,6 +41,7 @@
             </RelativeLayout>
         </androidx.appcompat.widget.Toolbar>
 
+
         <com.rishabh.concetto2019.HomePage.MVP.PlanetAnimationView
             android:id="@+id/animated_view"
             android:layout_width="match_parent"
@@ -54,8 +55,13 @@
             android:layout_below="@id/toolbar"
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="0.15"/>
 
             <ImageView
+                android:id="@+id/schedule_day1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="100dp"
@@ -63,6 +69,7 @@
                 android:src="@drawable/day1"/>
 
             <ImageView
+                android:id="@+id/schedule_day2"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="100dp"
@@ -70,11 +77,16 @@
                 android:src="@drawable/day2"/>
 
             <ImageView
+                android:id="@+id/schedule_day3"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/day3"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="0.15"/>
 
 
         </LinearLayout>
@@ -143,6 +155,14 @@
             android:layout_marginLeft="-250dp"
             android:layout_marginBottom="-360dp"
             android:src="@drawable/moon" />
+
+        <FrameLayout
+            android:name="com.rishabh.concetto2019.HomePage.MVP.ScheduleFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="25dp"
+            android:layout_below="@id/toolbar"
+            android:id="@+id/schedule_container"/>
 
     </RelativeLayout>
 
