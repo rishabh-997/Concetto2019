@@ -142,6 +142,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 Log.i("MainActivity", "openRatio=" + openRatio + " ,offsetPixels=" + offsetPixels);
             }
         });
+        setupMenu();
     }
 
     //handles touch events
@@ -194,8 +195,16 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         }
         return false;
     }
+    private void setupMenu() {
+        FragmentManager fm = getSupportFragmentManager();
+        Floating_menu f_menu = (Floating_menu) fm.findFragmentById(R.id.id_container_menu);
+        if (f_menu == null) {
+            f_menu = new Floating_menu();
+            fm.beginTransaction().add(R.id.id_container_menu, f_menu).commit();
+        }
+    }
 
-    @Override
+        @Override
     public void onBackPressed() {
         if(fragment_state==1)
         {
