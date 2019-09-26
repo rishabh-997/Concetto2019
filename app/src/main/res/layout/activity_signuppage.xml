@@ -1,68 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_color">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/background_tree"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/background_stars" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/background_logofooter"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="@+id/imageView" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:src="@drawable/background_logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <EditText
         android:id="@+id/email_signup_edittext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext"
-        tools:layout_editor_absoluteX="0dp" />
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="name"
+        android:inputType="text"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <EditText
         android:id="@+id/phone_signup_edittext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="phone number"
-        android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext"
-        tools:layout_editor_absoluteX="-34dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext" />
 
     <EditText
         android:id="@+id/name_signup_edittext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="name"
-        android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="phone"
+        android:inputType="phone"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toBottomOf="@+id/phone_signup_edittext" />
 
     <EditText
         android:id="@+id/password_signup_edittext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/phone_signup_edittext"
-        tools:layout_editor_absoluteX="-16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="college"
+        android:inputType="text"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext" />
 
     <EditText
         android:id="@+id/college_signup_edittext"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="college"
-        app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext" />
 
     <Button
         android:id="@+id/signup_signup_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Signup"
+        android:layout_width="165dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/roboto"
+        android:text="Sign Up"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
         app:layout_constraintTop_toBottomOf="@+id/college_signup_edittext" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/alreadyhaveanac"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.95" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/line_bg"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="SIGNUP"
+        android:textSize="16sp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline17" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto_mono"
+        android:text="2K19"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
