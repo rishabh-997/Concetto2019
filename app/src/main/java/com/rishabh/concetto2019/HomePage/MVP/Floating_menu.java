@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,38 +22,38 @@ import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
 {
-    private ImageView concettoIcon;
+    @BindView(R.id.ConcettoIcon)
+    ImageView concettoIcon;
+    @BindView(R.id.vNavigation)
+    NavigationView navigationView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
-    View view;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view= inflater.inflate(R.layout.fragment_menu, container, false);
+        ButterKnife.bind(this,view);
 
-        view= inflater.inflate(R.layout.fragment_menu, container, false);
-
-        concettoIcon= (ImageView) view.findViewById(R.id.ConcettoIcon);
-
-        NavigationView navigationView=(NavigationView)view.findViewById(R.id.vNavigation);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                int id = menuItem.getItemId();
-                switch (id) {
-                    case R.id.menu_login:
-                        startActivity(new Intent(getActivity(), LoginActivity.class));
-                        break;
-                    case R.id.menu_signup:
-                        startActivity(new Intent(getActivity(), SignupActivity.class));
-                        break;
-                }
-                Toast.makeText(getActivity(),menuItem.getTitle(),Toast.LENGTH_SHORT).show();
-                return false;
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
+            int id = menuItem.getItemId();
+            switch (id) {
+                case R.id.menu_login:
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    break;
+                case R.id.menu_signup:
+                    startActivity(new Intent(getActivity(), SignupActivity.class));
+                    break;
             }
-        }) ;
-        return  view ;}
+            return false;
+        });
+
+
+        return view ;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)

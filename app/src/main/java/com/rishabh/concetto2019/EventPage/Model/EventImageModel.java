@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.EventPage.MVP;
+package com.rishabh.concetto2019.EventPage.Model;
 
 public class EventImageModel {
 
