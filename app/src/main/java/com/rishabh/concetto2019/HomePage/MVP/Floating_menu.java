@@ -9,11 +9,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
 {
+    private ImageView concettoIcon;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +28,17 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
 
         view= inflater.inflate(R.layout.fragment_menu, container, false);
 
-        NavigationView navigationView=(NavigationView)view.findViewById(R.id.vNavigation);
-        navigationView.setNavigationItemSelectedListener(this);
+        concettoIcon= (ImageView) view.findViewById(R.id.ConcettoIcon);
 
-        return view;
-    }
+        NavigationView navigationView=(NavigationView)view.findViewById(R.id.vNavigation);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Toast.makeText(getActivity(),menuItem.getTitle(),Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }) ;
+        return  view ;}
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
