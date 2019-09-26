@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.HomePage.MVP;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.rishabh.concetto2019.Authentication.LogInPage.MVP.LoginActivity;
+import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
@@ -34,6 +37,15 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.menu_login:
+                        startActivity(new Intent(getActivity(), LoginActivity.class));
+                        break;
+                    case R.id.menu_signup:
+                        startActivity(new Intent(getActivity(), SignupActivity.class));
+                        break;
+                }
                 Toast.makeText(getActivity(),menuItem.getTitle(),Toast.LENGTH_SHORT).show();
                 return false;
             }

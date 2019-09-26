@@ -15,13 +15,13 @@
             android:icon="@drawable/drawericon"
             android:title="News" />
         <item
-            android:id="@+id/menu_department"
+            android:id="@+id/menu_login"
             android:icon="@drawable/drawericon"
-            android:title="Department" />
+            android:title="Login" />
         <item
-            android:id="@+id/menu_techtalks"
+            android:id="@+id/menu_signup"
             android:icon="@drawable/drawericon"
-            android:title="Techtalks" />
+            android:title="Sign Up" />
     </group>
     <group android:id="@+id/menu_group_2">
         <item
