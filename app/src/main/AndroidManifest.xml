@@ -21,10 +21,10 @@
             android:screenOrientation="portrait"
             android:label="Events"
             android:theme="@style/AppTheme"/>
-        <activity android:name=".SpecialNightPage.MVP.SpecialNightActivity"
-            android:screenOrientation="portrait"
-            android:label="Special Night"
-            android:theme="@style/AppTheme"/>
+        <!--<activity android:name=".SpecialNightPage.MVP.SpecialNightActivity"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:label="Special Night"-->
+            <!--android:theme="@style/AppTheme"/>-->
         <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
             android:screenOrientation="portrait"
             android:label="Tech Talks"
@@ -40,11 +40,11 @@
         <activity android:name=".Authentication.LogInPage.MVP.LoginActivity"
             android:screenOrientation="portrait"
             android:label="Login"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".Authentication.SignUpPage.MVP.SignupActivity"
             android:screenOrientation="portrait"
             android:label="SignUp"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme2"/>
 
         <meta-data
             android:name="preloaded_fonts"
