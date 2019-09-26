@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
@@ -56,6 +59,8 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     ImageView schedule_day3;
     @BindView(R.id.schedule_container)
     FrameLayout frameLayout;
+    @BindView(R.id.relativelayout)
+    RelativeLayout relativeLayout;
 
     public static int fragment_state = 0;
     final Fragment fragment1 = new ScheduleFragment1();
