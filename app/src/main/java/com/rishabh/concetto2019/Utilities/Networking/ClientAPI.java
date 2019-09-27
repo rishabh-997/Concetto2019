@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.Utilities.Networking;
 
+import com.rishabh.concetto2019.Authentication.LogInPage.Model.LogInResponse;
 import com.rishabh.concetto2019.Authentication.SignUpPage.Model.SignUpResponse;
 
 import retrofit2.Call;
@@ -21,5 +22,12 @@ public interface ClientAPI
             @Field("password") String password,
             @Field("phone") String phone,
             @Field("college") String college
+    );
+
+    @POST("auth/login")
+    @FormUrlEncoded
+    Call<LogInResponse> login(
+            @Field("email") String email,
+            @Field("password") String password
     );
 }

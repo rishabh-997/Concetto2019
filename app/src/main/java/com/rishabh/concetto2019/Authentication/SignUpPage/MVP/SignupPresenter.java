@@ -26,15 +26,17 @@ public class SignupPresenter implements SignupContract.presenter
             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                 if(response.isSuccessful())
                 {
-                    if(response.body().getResults().equals("Account created. Please activate your account from the email sent"))
+                    if(response.body().isSuccess())
                     {
                         mvpview.signedin();
                     }
                     else
                     {
-                        mvpview.showToast(response.body().getResults());
+                        mvpview.showToast(response.body().getError());
                     }
                 }
+                else
+                    mvpview.showToast(response.message());
             }
 
             @Override
