@@ -22,8 +22,6 @@ import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
 {
-    @BindView(R.id.ConcettoIcon)
-    ImageView concettoIcon;
     @BindView(R.id.vNavigation)
     NavigationView navigationView;
 

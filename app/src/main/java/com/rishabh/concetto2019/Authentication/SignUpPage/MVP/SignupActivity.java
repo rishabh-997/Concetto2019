@@ -1,6 +1,8 @@
 package com.rishabh.concetto2019.Authentication.SignUpPage.MVP;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +13,7 @@ import butterknife.ButterKnife;
 public class SignupActivity extends AppCompatActivity implements SignupContract.view {
 
     SignupContract.presenter presenter;
+    String email, name, password, phone, college;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -19,13 +22,28 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
 
         presenter = new SignupPresenter(this);
         ButterKnife.bind(this);
+
+        setup();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        startActivity(new Intent(this, HomePageActivity.class));
-//        overridePendingTransition(R.anim.slidein_to_right,R.anim.slideout_to_right);
-//        finish();
-//    }
+    private void setup()
+    {
+        /**
+         * Abstract methods here
+         */
+        presenter.doSignUp(email,name,password,phone,college);
+    }
+
+    @Override
+    public void showToast(String results) {
+        Toast.makeText(this, results, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void signedin() {
+
+        /**
+         * Activity to be performed after successful signup
+         */
+    }
 }
