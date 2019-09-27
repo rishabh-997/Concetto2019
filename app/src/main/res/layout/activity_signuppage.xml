@@ -21,7 +21,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/background_stars" />
+        android:src="@drawable/background_stars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -47,7 +50,7 @@
 
 
     <EditText
-        android:id="@+id/email_signup_edittext"
+        android:id="@+id/name_signup_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/editbox"
@@ -63,7 +66,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
     <EditText
-        android:id="@+id/phone_signup_edittext"
+        android:id="@+id/email_signup_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -77,10 +80,10 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext" />
 
     <EditText
-        android:id="@+id/name_signup_edittext"
+        android:id="@+id/phone_signup_edittext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -88,6 +91,23 @@
         android:fontFamily="@font/roboto_mono"
         android:hint="phone"
         android:inputType="phone"
+        android:paddingLeft="18dp"
+        android:textColor="#ffffff"
+        android:textColorHint="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext" />
+
+    <EditText
+        android:id="@+id/college_signup_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/editbox"
+        android:fontFamily="@font/roboto_mono"
+        android:hint="college"
+        android:inputType="text"
         android:paddingLeft="18dp"
         android:textColor="#ffffff"
         android:textColorHint="#ffffff"
@@ -103,23 +123,6 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/editbox"
         android:fontFamily="@font/roboto_mono"
-        android:hint="college"
-        android:inputType="text"
-        android:paddingLeft="18dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline18"
-        app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext" />
-
-    <EditText
-        android:id="@+id/college_signup_edittext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/editbox"
-        android:fontFamily="@font/roboto_mono"
         android:hint="password"
         android:inputType="textPassword"
         android:paddingLeft="18dp"
@@ -129,7 +132,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline18"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/college_signup_edittext" />
 
     <Button
         android:id="@+id/signup_signup_button"
@@ -141,7 +144,7 @@
         android:text="Sign Up"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="@+id/guideline17"
-        app:layout_constraintTop_toBottomOf="@+id/college_signup_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"

@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.rishabh.concetto2019.Authentication.LogInPage.MVP.LoginActivity;
+import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
 
@@ -40,8 +42,9 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
             @Override
             public void run() {
 
-                Intent intent = new Intent(SplashActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(SplashActivity.this, SignupActivity.class);
                 startActivity(intent);
+                finish();
             }
         },WELCOME_TIMEOUT);
     }
