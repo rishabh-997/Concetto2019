@@ -20,12 +20,4 @@ public class EventDetailActivity extends AppCompatActivity implements EventDetai
         presenter = new EventDetailPresenter(this);
         ButterKnife.bind(this);
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        startActivity(new Intent(this, HomePageActivity.class));
-//        overridePendingTransition(R.anim.slidein_to_right,R.anim.slideout_to_right);
-//        finish();
-//    }
 }

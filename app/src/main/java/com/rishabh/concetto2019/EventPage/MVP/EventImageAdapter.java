@@ -11,28 +11,29 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.rishabh.concetto2019.EventPage.Model.EventImageModel;
 import com.rishabh.concetto2019.R;
 
 import java.util.ArrayList;
 
 public class EventImageAdapter extends BaseAdapter {
 
-    private ArrayList<EventImageModel> data;
-    private AppCompatActivity activity;
+    private ArrayList<EventImageModel> list;
+    private AppCompatActivity context;
 
-    public EventImageAdapter(AppCompatActivity context, ArrayList<EventImageModel> objects) {
-        this.activity = context;
-        this.data = objects;
+    public EventImageAdapter(AppCompatActivity context, ArrayList<EventImageModel> list) {
+        this.context = context;
+        this.list = list;
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return list.size();
     }
 
     @Override
     public EventImageModel getItem(int position) {
-        return data.get(position);
+        return list.get(position);
     }
 
     @Override
@@ -46,41 +47,34 @@ public class EventImageAdapter extends BaseAdapter {
         ViewHolder viewHolder;
 
         if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.eventimagelayout, null, false);
 
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         } else {
-
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.gameImage.setImageResource(data.get(position).getImageSource());
-        viewHolder.gameName.setText(data.get(position).getName());
-
+        viewHolder.gameImage.setImageResource(list.get(position).getImageSource());
+        viewHolder.gameName.setText(list.get(position).getName());
         convertView.setOnClickListener(onClickListener(position));
-
         return convertView;
     }
 
     private View.OnClickListener onClickListener(final int position) {
-        return new View.OnClickListener() {
+        return v -> {
+            Dialog dialog = new Dialog(context);
+            dialog.setContentView(R.layout.dialog_event_image);
+            dialog.setCancelable(true); // dimiss when touching outside
+            dialog.setTitle("Event Details");
 
-            @Override
-            public void onClick(View v) {
-                 Dialog dialog = new Dialog(activity);
-                dialog.setContentView(R.layout.dialog_event_image);
-                dialog.setCancelable(true); // dimiss when touching outside
-                dialog.setTitle("Event Details");
+            TextView text = dialog.findViewById(R.id.eventname3);
+            text.setText(getItem(position).getName());
+            ImageView image = dialog.findViewById(R.id.eventimage3);
+            image.setImageResource(getItem(position).getImageSource());
 
-                TextView text = (TextView) dialog.findViewById(R.id.eventname3);
-                text.setText(getItem(position).getName());
-                ImageView image = (ImageView) dialog.findViewById(R.id.eventimage3);
-                image.setImageResource(getItem(position).getImageSource());
-
-                dialog.show();
-            }
+            dialog.show();
         };
     }
 
@@ -90,8 +84,8 @@ public class EventImageAdapter extends BaseAdapter {
         private ImageView gameImage;
 
         public ViewHolder(View v) {
-            gameImage = (ImageView) v.findViewById(R.id.eventimage2);
-            gameName = (TextView) v.findViewById(R.id.eventname2);
+            gameImage = v.findViewById(R.id.eventimage2);
+            gameName = v.findViewById(R.id.eventname2);
         }
     }
 }
