@@ -1,5 +1,7 @@
 package com.rishabh.concetto2019.Authentication.LogInPage.MVP;
 
+import android.text.Editable;
+
 import com.rishabh.concetto2019.Authentication.LogInPage.Model.LogInResponse;
 import com.rishabh.concetto2019.Utilities.Networking.ClientAPI;
 import com.rishabh.concetto2019.Utilities.Networking.Utils;
@@ -20,7 +22,7 @@ public class LoginPresenter implements LoginContract.presenter
     }
 
     @Override
-    public void doLogin(String email, String password) {
+    public void doLogin(String  email, String password) {
         clientAPI.login(email, password).enqueue(new Callback<LogInResponse>() {
             @Override
             public void onResponse(Call<LogInResponse> call, Response<LogInResponse> response) {

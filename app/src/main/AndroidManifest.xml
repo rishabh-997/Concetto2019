@@ -10,13 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round">
         <activity android:name=".HomePage.MVP.HomePageActivity"
             android:theme="@style/AppTheme2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen.MVP.SplashActivity"/>
+        <activity android:name=".SplashScreen.MVP.SplashActivity"
+            android:theme="@style/AppTheme2">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".EventPage.MVP.EventActivity"
             android:screenOrientation="portrait"
             android:label="Events"
