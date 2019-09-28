@@ -48,27 +48,33 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
 
     private void setup()
     {
-        name = nameSignupEditText.getText().toString();
-        email = emailSignupEditText.getText().toString();
-        password = passwordSignupEditText.getText().toString();
-        phone = phoneSignupEditText.getText().toString();
-        college = collegeSignupEditText.getText().toString();
+        signupButton.setOnClickListener(v ->
+        {
+            name = nameSignupEditText.getText().toString();
+            email = emailSignupEditText.getText().toString();
+            password = passwordSignupEditText.getText().toString();
+            phone = phoneSignupEditText.getText().toString();
+            college = collegeSignupEditText.getText().toString();
 
-        signupButton.setOnClickListener(v -> {
             if (name.length()==0){
                 nameSignupEditText.setError("Please enter your name");
+                nameSignupEditText.requestFocus();
             }
             else if (email.length()==0){
                 emailSignupEditText.setError("Please enter your email address");
+                emailSignupEditText.requestFocus();
             }
             else if (phone.length()!=10){
                 phoneSignupEditText.setError("Please enter your mobile number");
+                phoneSignupEditText.requestFocus();
             }
             else if (college.length()==0){
                 collegeSignupEditText.setError("Please enter the name of your college");
+                collegeSignupEditText.requestFocus();
             }
             else if (password.length()<6){
                 passwordSignupEditText.setError("Please enter a valid password");
+                passwordSignupEditText.requestFocus();
             }
             else{
                 presenter.doSignUp(email,name,password,phone,college);

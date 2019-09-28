@@ -47,10 +47,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.vi
 
     private void setup()
     {
-        email = emailLoginEditText.getText().toString();
-        password = passwordLoginEditText.getText().toString();
+        loginButton.setOnClickListener(v ->
+        {
+            email = emailLoginEditText.getText().toString();
+            password = passwordLoginEditText.getText().toString();
 
-        loginButton.setOnClickListener(v -> {
             if(email.length()==0){
                 emailLoginEditText.setError("Enter the required fields");
             }
