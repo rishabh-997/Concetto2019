@@ -7,7 +7,7 @@
             android:icon="@drawable/astronaut_helmet"
             android:title="Profile" />
         <item
-            android:id="@+id/menu_about1"
+            android:id="@+id/menu_about"
             android:icon="@drawable/info_button"
             android:title="About" />
         <item

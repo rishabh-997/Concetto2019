@@ -18,6 +18,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tech_talk_page);
+        getSupportActionBar().hide();
 
         presenter = new TechTalkPresenter(this);
         ButterKnife.bind(this);
