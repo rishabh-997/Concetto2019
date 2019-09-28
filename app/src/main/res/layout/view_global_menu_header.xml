@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     android:clickable="true">
-    <LinearLayout
-        android:id="@+id/vGlobalMenuHeader"
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#1F1F35">
 
         <ImageView
-            android:id="@+id/ConcettoIcon"
-            android:layout_width="@dimen/global_menu_avatar_size"
-            android:layout_height="@dimen/global_menu_avatar_size"
-            android:layout_margin="12dp" />
+            android:id="@+id/header_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/astro_11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/hi_astro_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:text="Concetto"
-            android:textColor="#2d5d82"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:paddingBottom="4dp"
+            android:text="HI ASTRONAUT!"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/header_navigation"
+            app:layout_constraintTop_toBottomOf="@id/header_navigation"
+            app:layout_constraintRight_toRightOf="@id/header_navigation"
+            app:layout_constraintLeft_toLeftOf="@id/header_navigation"
+            tools:layout_editor_absoluteX="153dp" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="16dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_launcher_background" />
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="0.1dp"
+        android:layout_gravity="top"
         android:background="#dddddd" />
 </FrameLayout>
