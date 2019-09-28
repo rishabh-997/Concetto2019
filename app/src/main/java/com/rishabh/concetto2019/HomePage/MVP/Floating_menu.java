@@ -36,11 +36,11 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
         ButterKnife.bind(this,view);
 
-        navigationView.setNavigationItemSelectedListener(menuItem -> {
+       /* navigationView.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
             switch (id) {
                 case R.id.menu_login:
-                    startActivity(new Intent(getActivity(), LoginActivity.class));
+            //  startActivity(new Intent(getActivity(), LoginActivity.class));
                     break;
                 case R.id.menu_signup:
                     startActivity(new Intent(getActivity(), SignupActivity.class));
@@ -49,7 +49,7 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
             return false;
         });
 
-
+*/
         return view ;
     }
 
