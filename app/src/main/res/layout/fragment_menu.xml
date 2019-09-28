@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"    >
+    android:layout_height="match_parent">
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/vNavigation"
@@ -12,6 +12,22 @@
         android:background="@android:color/transparent"
         app:headerLayout="@layout/view_global_menu_header"
         app:menu="@menu/drawer_menu"
-        app:itemIconTint="#8b8b8b"
-        app:itemTextColor="#666666"/>
+        app:itemIconTint="#000000"
+        app:itemTextAppearance="@font/roboto"
+        app:itemTextColor="#000000">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Log Out" />
+    </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
 </RelativeLayout>

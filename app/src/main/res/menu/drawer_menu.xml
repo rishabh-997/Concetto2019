@@ -3,32 +3,25 @@
 
     <group android:id="@+id/menu_group_1">
         <item
-            android:id="@+id/menu_home"
-            android:icon="@drawable/drawericon"
-            android:title="Home" />
+            android:id="@+id/menu_profile"
+            android:icon="@drawable/astronaut_helmet"
+            android:title="Profile" />
         <item
-            android:id="@+id/menu_events"
-            android:icon="@drawable/drawericon"
-            android:title="Events" />
-        <item
-            android:id="@+id/menu_workshops"
-            android:icon="@drawable/drawericon"
-            android:title="News" />
-        <item
-            android:id="@+id/menu_login"
-            android:icon="@drawable/drawericon"
-            android:title="Login" />
-        <item
-            android:id="@+id/menu_signup"
-            android:icon="@drawable/drawericon"
-            android:title="Sign Up" />
-    </group>
-    <group android:id="@+id/menu_group_2">
-        <item
-            android:id="@+id/menu_settings"
-            android:title="Settings" />
-        <item
-            android:id="@+id/menu_about"
+            android:id="@+id/menu_about1"
+            android:icon="@drawable/info_button"
             android:title="About" />
+        <item
+            android:id="@+id/menu_leaderboard"
+            android:icon="@drawable/bar_chart"
+            android:title="Leaderboard" />
+        <item
+            android:id="@+id/menu_developers"
+            android:icon="@drawable/tool"
+            android:title="Developers" />
+        <item
+            android:id="@+id/menu_report_bug"
+            android:icon="@drawable/bug"
+            android:title="Report Bug" />
+
     </group>
 </menu>
