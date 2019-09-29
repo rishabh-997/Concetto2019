@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.rishabh.concetto2019.Aboutus.AboutUsActivity;
 import com.rishabh.concetto2019.Developers.MVP.DeveloperActivity;
+import com.rishabh.concetto2019.Profile.MVP.ProfileActivity;
 import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
@@ -55,6 +56,9 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
                     break;
                 case R.id.menu_developers:
                     startActivity(new Intent(getActivity(), DeveloperActivity.class));
+                    break;
+                case R.id.menu_profile:
+                    startActivity(new Intent(getActivity(), ProfileActivity.class));
                     break;
 
             }
