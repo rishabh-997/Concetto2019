@@ -23,17 +23,20 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
 
     Context context;
     List<Developers> list;
+    onNoteClickListener onNoteClickListener;
 
-    public DeveloperAdapter(Context context, List<Developers> list) {
+
+    public DeveloperAdapter(Context context, List<Developers> list, onNoteClickListener listener) {
         this.context = context;
         this.list = list;
+        this.onNoteClickListener = listener;
     }
 
     @NonNull
     @Override
     public DeveloperAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.card_developer,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, onNoteClickListener);
     }
 
     @Override
@@ -54,15 +57,26 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
     {
         ImageView dev_image,dev_git, dev_linkedin;
         TextView dev_name,dev_branch;
+        onNoteClickListener listener;
 
-        public ViewHolder(@NonNull View itemView)
+        public ViewHolder(@NonNull View itemView, onNoteClickListener listener)
         {
             super(itemView);
+            this.listener = listener;
             dev_name = itemView.findViewById(R.id.dev_name);
             dev_branch = itemView.findViewById(R.id.dev_branch);
             dev_git = itemView.findViewById(R.id.dev_github);
             dev_linkedin = itemView.findViewById(R.id.dev_linkedin);
             dev_image = itemView.findViewById(R.id.dev_image);
+
+            dev_git.setOnClickListener(v -> listener.onGitClick(getAdapterPosition()));
+            dev_linkedin.setOnClickListener(v -> listener.onLinkedClick(getAdapterPosition()));
         }
+    }
+
+    public interface onNoteClickListener
+    {
+        void onGitClick(int position);
+        void onLinkedClick(int position);
     }
 }

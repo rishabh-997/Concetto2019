@@ -3,12 +3,12 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="8dp">
 
     <ImageView
         android:id="@+id/dev_image"
         android:layout_width="0dp"
-        android:layout_height="170dp"
+        android:layout_height="130dp"
         android:layout_weight="1"
         android:src="@drawable/astro_10"
         android:scaleType="centerCrop"/>
@@ -36,26 +36,26 @@
             android:layout_weight="1"
             android:text="Mathematics and computing"
             android:textSize="16sp"
-            android:gravity="center_vertical"
             android:paddingLeft="20dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="bottom">
 
             <ImageView
                 android:id="@+id/dev_github"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/github"
                 android:scaleType="fitXY"
                 android:layout_marginLeft="30dp"/>
             <ImageView
                 android:id="@+id/dev_linkedin"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/linked"
                 android:scaleType="fitXY"
                 android:layout_marginLeft="20dp"/>
