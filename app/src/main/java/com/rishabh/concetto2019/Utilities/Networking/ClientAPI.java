@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by Rishabh Agarwal on 23/09/2019
@@ -32,9 +33,10 @@ public interface ClientAPI
             @Field("password") String password
     );
 
-    @POST("")
+    @POST("users/{gmail}")
     @FormUrlEncoded
     Call<ProfileResponse> getProfile(
-
+        @Path("user") String email,
+        @Field("access_token") String access_token
     );
 }
