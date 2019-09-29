@@ -50,6 +50,9 @@
         <activity android:name=".Developers.MVP.DeveloperActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2"/>
+        <activity android:name=".Profile.MVP.ProfileActivity"
+            android:theme="@style/AppTheme2"
+            android:screenOrientation="portrait"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
