@@ -45,7 +45,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
 
     private void setup()
     {
-        lists.add(new EventPageList("Kamasutra","https://www.github.com/rishabh-997","https://www.github.com/rishabh-997","Rishabh","Kritik","9935685103","6209274679","Prize worth rs 69","https://www.github.com/rishabh-997"));
+        lists.add(new EventPageList("Buffet Money","https://www.github.com/rishabh-997","https://www.github.com/rishabh-997","Rishabh","Kritik","9935685103","6209274679","Prize worth rs 5000","https://www.github.com/rishabh-997"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this,lists,this, up, down,rotate);
