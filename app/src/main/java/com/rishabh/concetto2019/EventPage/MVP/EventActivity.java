@@ -25,7 +25,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
     EventContract.presenter presenter;
     List<EventPageList> lists = new ArrayList<>();
     EventAdapter adapter;
-    Animation up, down;
+    Animation up, down, rotate;
 
     @BindView(R.id.event_recycler)
     RecyclerView recyclerView;
@@ -38,6 +38,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         ButterKnife.bind(this);
         up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
+        rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
 
         setup();
     }
@@ -47,7 +48,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         lists.add(new EventPageList("Kamasutra","https://www.github.com/rishabh-997","https://www.github.com/rishabh-997","Rishabh","Kritik","9935685103","6209274679","Prize worth rs 69","https://www.github.com/rishabh-997"));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new EventAdapter(this,lists,this, up, down);
+        adapter = new EventAdapter(this,lists,this, up, down,rotate);
         recyclerView.setAdapter(adapter);
 
     }
