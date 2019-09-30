@@ -43,4 +43,11 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
     public void login(View view) {
         startActivity(new Intent(this, LoginActivity.class));
     }
+
+
+
+
+
+
+
 }
