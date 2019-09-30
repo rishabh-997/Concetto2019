@@ -19,11 +19,6 @@ import timber.log.Timber;
 public class EventActivity extends AppCompatActivity implements EventContract.view {
 
     EventContract.presenter presenter;
-    private EventImageAdapter adapter;
-    private ArrayList<EventImageModel> games = new ArrayList<>();
-
-//    @BindView(R.id.coverflow)
-//    FeatureCoverFlow coverFlow;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,39 +27,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         presenter = new EventPresenter(this);
         ButterKnife.bind(this);
 
-       // setup();
     }
-
-//    private void setup()
-//    {
-//        settingDummyData();
-//        coverFlow.setOnScrollPositionListener(onScrollListener());
-//        adapter = new EventImageAdapter(this, games);
-//        coverFlow.setAdapter(adapter);
-//    }
-
-
-//    private FeatureCoverFlow.OnScrollPositionListener onScrollListener() {
-//        return new FeatureCoverFlow.OnScrollPositionListener() {
-//            @SuppressLint("BinaryOperationInTimber")
-//            @Override
-//            public void onScrolledToPosition(int position) {
-//                Timber.tag("MainActiivty").v("position: " + position);
-//            }
-//
-//            @Override
-//            public void onScrolling() {
-//                Timber.i("scrolling");
-//            }
-//        };
-//    }
-//
-//    private void settingDummyData() {
-//        games.add(new EventImageModel(R.drawable.meat_balls_min, " Event1"));
-//        games.add(new EventImageModel(R.drawable.no_internet, " Event2"));
-//        games.add(new EventImageModel(R.drawable.veg_icon, " Event3"));
-//    }
-
 
     @Override
     public void onBackPressed() {

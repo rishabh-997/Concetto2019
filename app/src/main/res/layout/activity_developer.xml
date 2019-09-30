@@ -84,7 +84,7 @@
                         android:layout_height="130dp"
                         android:layout_weight="1"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/astro_10" />
+                        android:src="@drawable/kritik" />
 
                     <LinearLayout
                         android:layout_width="0dp"
