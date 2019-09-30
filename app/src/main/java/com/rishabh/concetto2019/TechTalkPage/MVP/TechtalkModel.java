@@ -2,15 +2,23 @@ package com.rishabh.concetto2019.TechTalkPage.MVP;
 
 public class TechtalkModel {
 
-    String aboutSpeaker,date,field,location,time,about;
+    String aboutSpeaker,date,field,location,time,name;
 
-    public TechtalkModel(String aboutSpeaker, String date, String field, String location, String time, String about) {
+    public TechtalkModel(String aboutSpeaker, String date, String field, String location, String time, String name) {
         this.aboutSpeaker = aboutSpeaker;
         this.date = date;
         this.field = field;
         this.location = location;
         this.time = time;
-        this.about = about;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAboutSpeaker() {
@@ -53,11 +61,5 @@ public class TechtalkModel {
         this.time = time;
     }
 
-    public String getAbout() {
-        return about;
-    }
 
-    public void setAbout(String about) {
-        this.about = about;
-    }
 }
