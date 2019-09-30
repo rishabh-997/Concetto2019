@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/event_cover"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:src="@drawable/cse_cover"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toBottomOf="@id/event_cover"
+        android:background="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="Buffet Money"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:fontFamily="@font/roboto"/>
+    <ImageView
+        android:id="@+id/event_arrow"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:src="@drawable/left_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/event_cover"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

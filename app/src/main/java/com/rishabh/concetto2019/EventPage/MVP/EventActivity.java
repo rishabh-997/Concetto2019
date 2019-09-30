@@ -1,24 +1,30 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.rishabh.concetto2019.EventPage.Model.EventImageModel;
+
+import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import it.moondroid.coverflow.components.ui.containers.FeatureCoverFlow;
-import timber.log.Timber;
 
-public class EventActivity extends AppCompatActivity implements EventContract.view {
+public class EventActivity extends AppCompatActivity implements EventContract.view, EventAdapter.OnNoteListener {
 
     EventContract.presenter presenter;
+    List<EventPageList> lists = new ArrayList<>();
+    EventAdapter adapter;
+
+    @BindView(R.id.event_recycler)
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +32,16 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         setContentView(R.layout.activity_eventpage);
         presenter = new EventPresenter(this);
         ButterKnife.bind(this);
+
+        setup();
+    }
+
+    private void setup()
+    {
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new EventAdapter(this,lists,this);
+        recyclerView.setAdapter(adapter);
 
     }
 
