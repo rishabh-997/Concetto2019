@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.rishabh.concetto2019.EventDetail.Model.EventDetailList;
 import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.R;
 
@@ -24,14 +22,15 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     Context context;
     List<EventPageList> list;
     OnNoteListener onNoteListener;
-    Animation up, down;
+    Animation up, down, rotate;
 
-    public EventAdapter(Context context, List<EventPageList> list, OnNoteListener onNoteListener, Animation up, Animation down) {
+    public EventAdapter(Context context, List<EventPageList> list, OnNoteListener onNoteListener, Animation up, Animation down, Animation rotate) {
         this.context = context;
         this.list = list;
         this.onNoteListener = onNoteListener;
         this.up = up;
         this.down = down;
+        this.rotate = rotate;
     }
 
     @NonNull
@@ -65,12 +64,14 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     @Override
                     public void onFinish() {
                         holder.constraintLayout.setVisibility(View.GONE);
+                        holder.arrow.startAnimation(rotate);
                     }
                 };
                 countDownTimerStatic.start();
 
             } else {
                 holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.arrow.startAnimation(rotate);
                 holder.constraintLayout.startAnimation(down);
             }
 
