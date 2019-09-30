@@ -19,11 +19,14 @@
 
 
         <activity android:name=".HomePage.MVP.HomePageActivity"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2"
+            android:screenOrientation="portrait"
+            />
         <activity android:name=".EventPage.MVP.EventActivity"
             android:screenOrientation="portrait"
             android:label="Events"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            />
         <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
             android:screenOrientation="portrait"
             android:label="Tech Talks"
