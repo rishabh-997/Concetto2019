@@ -16,7 +16,7 @@
         android:onClick="login"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tech_recycler"
+        android:id="@+id/tech_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"

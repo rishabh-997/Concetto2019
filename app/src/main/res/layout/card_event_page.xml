@@ -44,7 +44,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/collapsable_layout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#BEBEBE"
         android:visibility="gone"

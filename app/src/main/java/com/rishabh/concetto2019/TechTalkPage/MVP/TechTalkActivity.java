@@ -36,7 +36,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tech_talk_page);
-        recycler=findViewById(R.id.tech_recycler);
+        recycler=findViewById(R.id.tech_recycler_view);
         getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
         recycler.setLayoutManager(new LinearLayoutManager(this));
