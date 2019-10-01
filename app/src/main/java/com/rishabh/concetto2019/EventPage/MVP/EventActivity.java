@@ -8,6 +8,7 @@ import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,13 +23,16 @@ import com.rishabh.concetto2019.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EventActivity extends AppCompatActivity implements EventContract.view, EventAdapter.OnNoteListener {
-
+    private DrawerLayout drawer;
     EventContract.presenter presenter;
     List<EventPageList> lists = new ArrayList<>();
     EventAdapter adapter;
@@ -116,4 +120,10 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
          * kara do register
          */
     }
+
+    @Override
+    public void onBackPressed1() {
+
+    }
+
 }

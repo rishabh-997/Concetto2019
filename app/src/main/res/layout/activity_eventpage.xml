@@ -7,6 +7,46 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_color">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toTopOf="@+id/event_branch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/hamburgericon"
+                ></ImageButton>
+
+            <TextView
+                android:id="@+id/event_branch1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="-1dp"
+                android:layout_marginEnd="106dp"
+                android:fontFamily="@font/roboto"
+                android:text="EVENTS"
+                android:textColor="#ffffff"
+                android:textSize="30sp" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
 
     <View
         android:id="@+id/view3"
@@ -21,18 +61,7 @@
         app:layout_constraintTop_toTopOf="@id/guideline12"
         tools:layout_editor_absoluteY="214dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/roboto"
-        android:text="Events"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/event_branch"
@@ -46,6 +75,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline12"
@@ -65,9 +95,5 @@
             android:id="@+id/event_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-
-    </ScrollView>
+          
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,4 +28,8 @@
     everyone. Apart from the various Robotics and Coding events, Concetto calls all the budding
     Entrepreneurs to showcase their innovative business skills. At the same time, hone your skills
     by joining our workshops taken by the eminent personalities in the various fields of science</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
