@@ -11,9 +11,9 @@
             android:icon="@drawable/info_button"
             android:title="About" />
         <item
-            android:id="@+id/menu_leaderboard"
-            android:icon="@drawable/bar_chart"
-            android:title="Leaderboard" />
+            android:id="@+id/menu_contactus"
+            android:icon="@drawable/telephone"
+            android:title="Contact us" />
         <item
             android:id="@+id/menu_developers"
             android:icon="@drawable/tool"
