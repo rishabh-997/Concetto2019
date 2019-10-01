@@ -47,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#BEBEBE"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/event_cover">
@@ -66,41 +66,42 @@
                 android:id="@+id/field_head"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Field: "
-                android:textAllCaps="true"
-                android:textSize="16dp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/roboto"
                 android:paddingLeft="20dp"
-                android:textColor="#FFFFFF"/>
+                android:text="Field: "
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/field_head"
+                android:fontFamily="@font/roboto"
                 android:text="Field"
                 android:textAllCaps="true"
-                android:textSize="16sp"
-                android:layout_toRightOf="@id/field_head"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto"
-                android:textColor="#FFFFFF"/>
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/event_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/field_head"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/gray_box_purple_border"
                 android:fontFamily="@font/quicksand"
                 android:gravity="center"
-                android:layout_below="@id/field_head"
                 android:padding="10dp"
                 android:text="About"
                 android:textAllCaps="true"
                 android:textColor="@android:color/black"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
         </RelativeLayout>
 
