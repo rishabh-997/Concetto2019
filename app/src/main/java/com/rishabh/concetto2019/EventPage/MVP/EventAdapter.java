@@ -101,7 +101,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
             event_name = itemView.findViewById(R.id.event_name);
-            rule_book = itemView.findViewById(R.id.registration_workshop);
+            rule_book = itemView.findViewById(R.id.about);
             about = itemView.findViewById(R.id.event_about);
             arrow = itemView.findViewById(R.id.event_arrow);
             organizer_name1 = itemView.findViewById(R.id.event_contact_name1);

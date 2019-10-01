@@ -60,6 +60,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/leftclick"
             android:layout_width="31dp"
             android:layout_height="31dp"
             android:scaleType="centerCrop"

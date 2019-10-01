@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -58,6 +59,8 @@ public class EventActivityNew extends AppCompatActivity
     RecyclerView recyclerView;
     @BindView(R.id.openDrawer)
     ImageView openDrawer;
+    @BindView(R.id.leftclick)
+    ImageView leftclick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,7 @@ public class EventActivityNew extends AppCompatActivity
         setContentView(R.layout.activity_event_new);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -74,8 +78,19 @@ public class EventActivityNew extends AppCompatActivity
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
-
         ButterKnife.bind(this);
+
+        leftclick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+            }
+        });
+
+
         navigationView.setNavigationItemSelectedListener(this);
         up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this, R.anim.slide_down);

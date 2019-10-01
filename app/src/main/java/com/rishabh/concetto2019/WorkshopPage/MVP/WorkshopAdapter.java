@@ -1,6 +1,8 @@
 package com.rishabh.concetto2019.WorkshopPage.MVP;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,9 +40,17 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
        // holder.link.setText(list.get(position).getRegistration());
         holder.date.setText(list.get(position).getDate());
         holder.date.append("\n"+list.get(position).getTime());
-     //   holder.location.setText(list.get(position).getLocation());
+       holder.location.setText(list.get(position).getLocation());
        // holder.name.setText(list.get(position).getName());
         holder.eventname.setText(list.get(position).getEventname());
+        holder.link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse(list.get(position).getRegistration()); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                context.startActivity(intent);
+            }
+        });
 
 
 
@@ -56,9 +66,12 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
         TextView about,date,eventname,name,time,location,link;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            about=itemView.findViewById(R.id.about);
             date = itemView.findViewById(R.id.time);
             location = itemView.findViewById(R.id.location);
             eventname= itemView.findViewById(R.id.event_name);
+            link=itemView.findViewById(R.id.workshop_register);
+
         }
     }
 }
