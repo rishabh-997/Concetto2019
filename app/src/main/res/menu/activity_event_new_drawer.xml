@@ -15,13 +15,28 @@
             android:title="Mathematics and Computing" />
         <item
             android:id="@+id/ei"
-            android:title="ei" />
+            android:title="Electronic and Instrumentation Engineering" />
         <item
             android:id="@+id/ece"
             android:title="Electronics and Communication Department" />
         <item
+            android:id="@+id/mechanical"
+            android:title="Mechanical  Engineering" />
+        <item
             android:id="@+id/petro"
-            android:title="Petroleum Department" />
+            android:title="Petroleum Engineering" />
+
+        <item
+            android:id="@+id/chemical"
+            android:title="Chemical Department" />
+
+        <item
+            android:id="@+id/ep"
+            android:title="Engineering Physics " />
+
+
+
+
     </group>
 
 </menu>

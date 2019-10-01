@@ -84,6 +84,8 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
 
 
 
+
+
     }
 
     @Override
@@ -99,6 +101,7 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
             super(itemView);
 
             about =itemView.findViewById(R.id.event_about);
+
             field = itemView.findViewById(R.id.field);
             date = itemView.findViewById(R.id.time);
             location = itemView.findViewById(R.id.location);

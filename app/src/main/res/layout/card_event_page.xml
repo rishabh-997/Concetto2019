@@ -53,7 +53,11 @@
         app:layout_constraintTop_toBottomOf="@id/event_cover">
 
         <TextView
+<<<<<<< HEAD
             android:id="@+id/event_about"
+=======
+            android:id="@+id/about"
+>>>>>>> 8066022decafaa3f03b9d72d618c5d5e5143f23e
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -74,21 +78,22 @@
         <TextView
             android:id="@+id/event_about"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
             android:background="@drawable/gray_box_purple_border"
             android:fontFamily="@font/quicksand"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="0dp"
             android:text="About"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
+            android:textSize="0sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/event_about" />
+
 
         <RelativeLayout
             android:id="@+id/cont_layout"
