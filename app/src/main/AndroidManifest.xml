@@ -38,6 +38,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:label="Event Details"/>
+        <activity android:name=".Contactus.ContactusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
         <activity android:name=".Authentication.LogInPage.MVP.LoginActivity"
             android:screenOrientation="portrait"
             android:label="Login"

@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.rishabh.concetto2019.Aboutus.AboutUsActivity;
+import com.rishabh.concetto2019.Contactus.ContactusActivity;
 import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.Developers.MVP.DeveloperActivity;
 import com.rishabh.concetto2019.Profile.MVP.ProfileActivity;
@@ -71,6 +72,9 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
                     {
                         startActivity(new Intent(getActivity(),ProfileActivity.class));
                     }
+                    break;
+                case R.id.menu_contactus:
+                    startActivity(new Intent(getActivity(), ContactusActivity.class));
                     break;
 
             }

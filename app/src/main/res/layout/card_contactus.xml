@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/d_image1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:src="@drawable/astro_10"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/d_name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Rishabh Agarwal"
+            android:gravity="center_vertical"
+            android:textSize="19sp"
+            android:paddingLeft="22dp"
+            android:textColor="@android:color/black"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/d_telephone"
+                android:layout_height="wrap_content"
+                android:src="@drawable/telephone" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/d_telephone_number"
+                android:layout_height="match_parent"
+                android:text="9876543210"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/d_envelop_shape"
+                android:src="@drawable/envelope_shape" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/d_mail_id"
+                android:layout_height="match_parent"
+                android:text="00harshjainjain00@gmail.com"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
