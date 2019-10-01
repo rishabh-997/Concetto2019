@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rishabh.concetto2019.R;
-import com.rishabh.concetto2019.TechTalkPage.MVP.Techtalkadapter;
+import com.rishabh.concetto2019.WorkshopPage.Model.WorkshopModel;
 
 import java.util.List;
 

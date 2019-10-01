@@ -52,6 +52,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
+        getSupportActionBar().hide();
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -100,30 +101,16 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
 
     @Override
     public void onRuleClick(int position) {
-        /**
-         * dekha do rule book
-         */
-
-
 
     }
 
     @Override
     public void onAboutClick(int position) {
-        /**
-         * dikha do about us
-         */
+
     }
 
     @Override
     public void onRegisterClick(int position) {
-        /**
-         * kara do register
-         */
-    }
-
-    @Override
-    public void onBackPressed1() {
 
     }
 

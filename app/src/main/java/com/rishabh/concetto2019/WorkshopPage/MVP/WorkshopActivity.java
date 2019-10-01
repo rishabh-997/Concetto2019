@@ -16,9 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
-import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
-import com.rishabh.concetto2019.TechTalkPage.MVP.TechtalkModel;
-import com.rishabh.concetto2019.TechTalkPage.MVP.Techtalkadapter;
+import com.rishabh.concetto2019.WorkshopPage.Model.WorkshopModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +37,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workshop_page);
         recycler=findViewById(R.id.workshop_recycler);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
         list=new ArrayList<>();
         recycler.setLayoutManager(new LinearLayoutManager(this));

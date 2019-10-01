@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rishabh.concetto2019.R;
+import com.rishabh.concetto2019.TechTalkPage.Model.TechtalkModel;
 
-import java.nio.channels.ReadableByteChannel;
 import java.util.List;
 
 public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHolder> {

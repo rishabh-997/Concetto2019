@@ -125,6 +125,5 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         void onAboutClick(int position);
         void onRegisterClick(int position);
 
-        void onBackPressed1();
     }
 }
