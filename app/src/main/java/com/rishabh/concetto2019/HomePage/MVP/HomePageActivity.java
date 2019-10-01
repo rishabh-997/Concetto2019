@@ -177,17 +177,14 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
 
                             startActivity(new Intent(this, WorkshopActivity.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
-                            finish();
                         } else if (v.getId() == R.id.button_event) {
 
                             startActivity(new Intent(this, EventActivityNew.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
-                            finish();
                         } else if (v.getId() == R.id.button_techtalks) {
 
                             startActivity(new Intent(this, TechTalkActivity.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
-                            finish();
                         }
                         v.setX(original + dx);
                     }
