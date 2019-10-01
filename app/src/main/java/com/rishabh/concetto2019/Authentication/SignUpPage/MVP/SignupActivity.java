@@ -16,15 +16,15 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
 
     SignupContract.presenter presenter;
 
-    @BindView(R.id.name_signup_edittext)
-    EditText nameSignupEditText;
-    @BindView(R.id.email_signup_edittext)
-    EditText emailSignupEditText;
-    @BindView(R.id.password_signup_edittext)
-    EditText passwordSignupEditText;
     @BindView(R.id.phone_signup_edittext)
-    EditText phoneSignupEditText;
+    EditText nameSignupEditText;
+    @BindView(R.id.name_signup_edittext)
+    EditText emailSignupEditText;
     @BindView(R.id.college_signup_edittext)
+    EditText passwordSignupEditText;
+    @BindView(R.id.email_signup_edittext)
+    EditText phoneSignupEditText;
+    @BindView(R.id.password_signup_edittext)
     EditText collegeSignupEditText;
     @BindView(R.id.signup_signup_button)
     Button signupButton;
