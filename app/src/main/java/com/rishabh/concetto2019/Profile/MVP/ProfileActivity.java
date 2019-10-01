@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.rishabh.concetto2019.Profile.Model.ProfileModel;
 import com.rishabh.concetto2019.R;
+import com.rishabh.concetto2019.Utilities.SharedPref;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import butterknife.ButterKnife;
 public class ProfileActivity extends AppCompatActivity implements ProfileContract.view
 {
     ProfileContract.presenter presenter;
-    String name,college,admin,email,phone;
+    SharedPref sharedPref;
 
     @BindView(R.id.profile_name)
     TextView profile_name;
@@ -39,27 +40,12 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         setContentView(R.layout.activity_profile);
         presenter = new ProfilePresenter(this);
         ButterKnife.bind(this);
-    }
+        sharedPref = new SharedPref(this);
 
-    @Override
-    public void showToast(String error) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
-    }
+        profile_name.setText(sharedPref.getName());
+        profile_phone.setText(sharedPref.getPhone());
+        profile_college.setText(sharedPref.getCollege());
+        profile_email.setText(sharedPref.getEmail());
 
-    @Override
-    public void showProfile(List<ProfileModel> profile) {
-        name = profile.get(0).getName();
-        college = profile.get(0).getCollege();
-        admin = profile.get(0).getAdmin();
-        email = profile.get(0).getEmail();
-        phone = profile.get(0).getPhone();
-
-        profile_name.setText(name);
-        profile_college.setText(college);
-        profile_phone.setText(phone);
-        profile_email.setText(email);
-
-        profile_forgot.setOnClickListener(v -> Toast.makeText(this, "Forgot Password", Toast.LENGTH_SHORT).show());
-        profile_events.setOnClickListener(v -> Toast.makeText(this, "Registered Events", Toast.LENGTH_SHORT).show());
     }
 }

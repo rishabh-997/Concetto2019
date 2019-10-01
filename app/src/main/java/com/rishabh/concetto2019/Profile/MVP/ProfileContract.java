@@ -9,9 +9,6 @@ public class ProfileContract
     interface view
     {
 
-        void showToast(String error);
-
-        void showProfile(List<ProfileModel> profile);
     }
     interface presenter
     {
