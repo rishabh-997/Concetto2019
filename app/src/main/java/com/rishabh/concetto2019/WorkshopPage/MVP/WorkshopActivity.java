@@ -37,7 +37,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workshop_page);
         recycler=findViewById(R.id.workshop_recycler);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
         list=new ArrayList<>();
         recycler.setLayoutManager(new LinearLayoutManager(this));

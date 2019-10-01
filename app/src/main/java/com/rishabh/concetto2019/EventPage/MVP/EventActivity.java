@@ -101,28 +101,16 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
 
     @Override
     public void onRuleClick(int position) {
-        /**
-         * dekha do rule book
-         */
 
     }
 
     @Override
     public void onAboutClick(int position) {
-        /**
-         * dikha do about us
-         */
+
     }
 
     @Override
     public void onRegisterClick(int position) {
-        /**
-         * kara do register
-         */
-    }
-
-    @Override
-    public void onBackPressed1() {
 
     }
 

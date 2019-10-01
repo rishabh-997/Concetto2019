@@ -22,10 +22,10 @@
             android:theme="@style/AppTheme2"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".EventPage.MVP.EventActivity"
+        <activity android:name=".EventPage.MVP.EventActivityNew"
             android:screenOrientation="portrait"
             android:label="Events"
-            android:theme="@style/AppTheme.NoActionBar"
+            android:theme="@style/AppTheme2"
             />
         <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
             android:screenOrientation="portrait"
