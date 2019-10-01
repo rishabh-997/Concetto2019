@@ -34,13 +34,13 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull WorkshopAdapter.ViewHolder holder, int position) {
-//        holder.about.setText(list.get(position).getAbout());
-//        holder.link.setText(list.get(position).getRegistration());
-//        holder.time.setText(list.get(position).getTime());
-//        holder.date.setText(list.get(position).getDate());
-//        holder.location.setText(list.get(position).getLocation());
-//        holder.name.setText(list.get(position).getName());
-//        holder.eventname.setText(list.get(position).getEventname());
+        holder.about.setText(list.get(position).getAbout());
+       // holder.link.setText(list.get(position).getRegistration());
+        holder.date.setText(list.get(position).getDate());
+        holder.date.append("\n"+list.get(position).getTime());
+     //   holder.location.setText(list.get(position).getLocation());
+       // holder.name.setText(list.get(position).getName());
+        holder.eventname.setText(list.get(position).getEventname());
 
 
 
@@ -56,6 +56,9 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
         TextView about,date,eventname,name,time,location,link;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            date = itemView.findViewById(R.id.time);
+            location = itemView.findViewById(R.id.location);
+            eventname= itemView.findViewById(R.id.event_name);
         }
     }
 }

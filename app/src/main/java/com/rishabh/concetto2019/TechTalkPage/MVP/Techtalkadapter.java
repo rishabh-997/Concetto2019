@@ -14,6 +14,8 @@ import com.rishabh.concetto2019.TechTalkPage.Model.TechtalkModel;
 
 import java.util.List;
 
+import static com.rishabh.concetto2019.R.id.field;
+
 public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHolder> {
 
     List<TechtalkModel> list;
@@ -39,8 +41,8 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.about.setText(list.get(position).getAboutSpeaker());
         holder.field.setText(list.get(position).getField());
-        holder.time.setText(list.get(position).getTime());
         holder.date.setText(list.get(position).getDate());
+        holder.date.append("\n" + list.get(position).getTime());
         holder.location.setText(list.get(position).getLocation());
         holder.name.setText(list.get(position).getName());
 
@@ -55,11 +57,15 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView about,field,time,date,location,name;
+         TextView about,field,time,date,location,name;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            //findviewbyid work
+            field = itemView.findViewById(R.id.field);
+            date = itemView.findViewById(R.id.time);
+            location = itemView.findViewById(R.id.location);
+            name = itemView.findViewById(R.id.event_name);
+
 
         }
     }
