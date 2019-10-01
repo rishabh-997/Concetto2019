@@ -17,6 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import retrofit2.http.HEAD;
+
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
 
     Context context;
@@ -101,7 +103,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
             event_name = itemView.findViewById(R.id.event_name);
-            rule_book = itemView.findViewById(R.id.event_ruleBook);
+            rule_book = itemView.findViewById(R.id.event_about);
             about = itemView.findViewById(R.id.event_about);
             arrow = itemView.findViewById(R.id.event_arrow);
             organizer_name1 = itemView.findViewById(R.id.event_contact_name1);

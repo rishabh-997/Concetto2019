@@ -25,8 +25,7 @@
         <activity android:name=".EventPage.MVP.EventActivityNew"
             android:screenOrientation="portrait"
             android:label="Events"
-            android:theme="@style/AppTheme2"
-            />
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".TechTalkPage.MVP.TechTalkActivity"
             android:screenOrientation="portrait"
             android:label="Tech Talks"

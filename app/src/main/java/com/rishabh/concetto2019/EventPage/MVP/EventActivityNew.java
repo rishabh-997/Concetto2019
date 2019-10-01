@@ -1,11 +1,14 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -33,6 +36,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -42,7 +46,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EventActivityNew extends AppCompatActivity
-        implements  EventContract.view, EventAdapter.OnNoteListener ,NavigationView.OnNavigationItemSelectedListener {
+        implements EventContract.view, EventAdapter.OnNoteListener, NavigationView.OnNavigationItemSelectedListener {
     EventContract.presenter presenter;
     List<EventPageList> lists = new ArrayList<>();
     EventAdapter adapter;
@@ -53,7 +57,10 @@ public class EventActivityNew extends AppCompatActivity
     DrawerLayout drawer;
     @BindView(R.id.event_recycler)
     RecyclerView recyclerView;
-    ActionBarDrawerToggle toggle;
+    @BindView(R.id.openDrawer)
+    ImageView openDrawer;
+    @BindView(R.id.leftclick)
+    ImageView leftclick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,22 +69,35 @@ public class EventActivityNew extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
-
         ButterKnife.bind(this);
+
+        leftclick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+            }
+        });
+
+
         navigationView.setNavigationItemSelectedListener(this);
-        up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
-        down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
+        up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+        down = AnimationUtils.loadAnimation(this, R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new EventAdapter(this,lists,  this, up, down,rotate);
+        adapter = new EventAdapter(this, lists, this, up, down, rotate);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Events");
 
@@ -85,7 +105,7 @@ public class EventActivityNew extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 lists.clear();
-                for(DataSnapshot db: dataSnapshot.getChildren()){
+                for (DataSnapshot db : dataSnapshot.getChildren()) {
                     String name = db.child("Name").getValue().toString();
                     String organiser_1 = db.child("Organizer1").getValue().toString();
                     String organiser_2 = db.child("Organizer2").getValue().toString();
@@ -97,9 +117,9 @@ public class EventActivityNew extends AppCompatActivity
                     String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                     String registerUrl = db.child("Register url").getValue().toString();
 
-                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl);
+                    eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
                     lists.add(eventPageListlist);
-                    Log.i("Testing firebase", lists.size()+"");
+                    Log.i("Testing firebase", lists.size() + "");
                 }
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
@@ -110,8 +130,38 @@ public class EventActivityNew extends AppCompatActivity
 
             }
         });
+
     }
 
+
+    void  filter(String a){
+        int n=lists.size();
+        List<EventPageList> listnew=new ArrayList<>();
+        for(int i=0; i<n; i++ ){
+            if(lists.get(i).getOrganisedBy().equals(a)){
+                String name = lists.get(i).getEvent_name().toString();
+                String organiser_1 = lists.get(i).getOrganizer_name1().toString();
+                String organiser_2 = lists.get(i).getOrganizer_name2().toString();
+                String organiser_1_phone = lists.get(i).getOrganizer_phone1().toString();
+                String organiser_2_phone = lists.get(i).getOrganizer_phone2().toString();
+                String organisedBy = lists.get(i).getOrganisedBy().toString();
+                String prizes =lists.get(i).getPrize().toString();
+                String aboutUrl = lists.get(i).getAbout_url().toString();
+                String ruleBookUrl = lists.get(i).getRule_book_url().toString();
+                String registerUrl = lists.get(i).getRegister_url().toString();
+
+                eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
+                listnew.add(eventPageListlist);
+
+
+
+            }
+            adapter = new EventAdapter(EventActivityNew.this, listnew, EventActivityNew.this, up, down, rotate);
+
+            recyclerView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+        }
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -143,35 +193,30 @@ public class EventActivityNew extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cse) {
+        if (id == R.id.all){
+
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     lists.clear();
-                    adapter.notifyDataSetChanged();
                     for (DataSnapshot db : dataSnapshot.getChildren()) {
-                        if (db.child("Organised By").getValue().toString().equals("Computer Science")) {
-                            String name = db.child("Name").getValue().toString();
-                            String organiser_1 = db.child("Organizer1").getValue().toString();
-                            String organiser_2 = db.child("Organizer2").getValue().toString();
-                            String organiser_1_phone = db.child("Organizer1 Phone").getValue().toString();
-                            String organiser_2_phone = db.child("Organizer2 Phone").getValue().toString();
-                            String organisedBy = db.child("Organised By").getValue().toString();
-                            String prizes = db.child("Prizes").getValue().toString();
-                            String aboutUrl = db.child("About url").getValue().toString();
-                            String ruleBookUrl = db.child("Rule Book url").getValue().toString();
-                            String registerUrl = db.child("Register url").getValue().toString();
+                        String name = db.child("Name").getValue().toString();
+                        String organiser_1 = db.child("Organizer1").getValue().toString();
+                        String organiser_2 = db.child("Organizer2").getValue().toString();
+                        String organiser_1_phone = db.child("Organizer1 Phone").getValue().toString();
+                        String organiser_2_phone = db.child("Organizer2 Phone").getValue().toString();
+                        String organisedBy = db.child("Organised By").getValue().toString();
+                        String prizes = db.child("Prizes").getValue().toString();
+                        String aboutUrl = db.child("About url").getValue().toString();
+                        String ruleBookUrl = db.child("Rule Book url").getValue().toString();
+                        String registerUrl = db.child("Register url").getValue().toString();
 
-                            eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl);
-                            lists.add(eventPageListlist);
-                        }
-
+                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
+                        lists.add(eventPageListlist);
                         Log.i("Testing firebase", lists.size() + "");
                     }
-                    adapter = new EventAdapter(EventActivityNew.this,lists,  EventActivityNew.this, up, down,rotate);
-
-                    adapter.notifyDataSetChanged();
                     recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
                 }
 
                 @Override
@@ -179,48 +224,12 @@ public class EventActivityNew extends AppCompatActivity
 
                 }
             });
-            // Handle the camera action
-            Toast.makeText(this, "haash", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.cse) {
+            filter("computer Science and Engineering");
+
         } else if (id == R.id.mnc) {
-            databaseReference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    lists.clear();
-                    adapter.notifyDataSetChanged();
-                    for (DataSnapshot db : dataSnapshot.getChildren()) {
-                        Toast.makeText(EventActivityNew.this, "lll", Toast.LENGTH_SHORT).show();
-                        if (db.child("Organised By").getValue().toString().equals("Mathematics and Computing")) {
-                            Toast.makeText(EventActivityNew.this, "fffffff", Toast.LENGTH_SHORT).show();
-                            String name = db.child("Name").getValue().toString();
-                            String organiser_1 = db.child("Organizer1").getValue().toString();
-                            String organiser_2 = db.child("Organizer2").getValue().toString();
-                            String organiser_1_phone = db.child("Organizer1 Phone").getValue().toString();
-                            String organiser_2_phone = db.child("Organizer2 Phone").getValue().toString();
-                            String organisedBy = db.child("Organised By").getValue().toString();
-                            String prizes = db.child("Prizes").getValue().toString();
-                            String aboutUrl = db.child("About url").getValue().toString();
-                            String ruleBookUrl = db.child("Rule Book url").getValue().toString();
-                            String registerUrl = db.child("Register url").getValue().toString();
-
-                            eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl);
-                            lists.add(eventPageListlist);
-                        }
-                       // adapter=new EventAdapter(EventActivityNew.this,lists);
-
-                    }
-                    adapter = new EventAdapter(EventActivityNew.this,lists,  EventActivityNew.this, up, down,rotate);
-
-                    adapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(adapter);
-                    Log.i("Testing firebase", lists.size() + "");
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
-
+             filter("Mathematics and Computing");
         } else if (id == R.id.petro) {
 
         } else if (id == R.id.ei) {
@@ -236,6 +245,9 @@ public class EventActivityNew extends AppCompatActivity
 
     @Override
     public void onRuleClick(int position) {
+        Uri uri = Uri.parse(lists.get(position).getRule_book_url()); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
 
     }
 
@@ -246,6 +258,10 @@ public class EventActivityNew extends AppCompatActivity
 
     @Override
     public void onRegisterClick(int position) {
+      //  Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse(lists.get(position).getRegister_url()); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
 
     }
 }

@@ -5,28 +5,38 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/all"
+            android:title="All" />
+        <item
             android:id="@+id/cse"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="cse" />
+            android:title="Computer Science and Engineering" />
         <item
             android:id="@+id/mnc"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="mnc" />
+            android:title="Mathematics and Computing" />
         <item
             android:id="@+id/ei"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="ei" />
+            android:title="Electronic and Instrumentation Engineering" />
         <item
             android:id="@+id/ece"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="ece" />
-
+            android:title="Electronics and Communication Department" />
+        <item
+            android:id="@+id/mechanical"
+            android:title="Mechanical  Engineering" />
         <item
             android:id="@+id/petro"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="petro" />
+            android:title="Petroleum Engineering" />
+
+        <item
+            android:id="@+id/chemical"
+            android:title="Chemical Department" />
+
+        <item
+            android:id="@+id/ep"
+            android:title="Engineering Physics " />
+
+
+
+
     </group>
-
-
 
 </menu>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_color">
@@ -85,6 +84,7 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto_mono"
-        android:text="SIGNUP"
+        android:text="Details"
         android:textSize="16sp"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/guideline10"
@@ -144,7 +144,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/email_signup_edittext"
+                android:id="@+id/name_signup_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/editbox"
@@ -159,7 +159,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/phone_signup_edittext"
+                android:id="@+id/email_signup_edittext"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -172,10 +172,10 @@
                 android:textColorHint="#ffffff"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext" />
+                app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext" />
 
             <EditText
-                android:id="@+id/name_signup_edittext"
+                android:id="@+id/phone_signup_edittext"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -188,10 +188,10 @@
                 android:textColorHint="#ffffff"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/phone_signup_edittext" />
+                app:layout_constraintTop_toBottomOf="@+id/email_signup_edittext" />
 
             <EditText
-                android:id="@+id/password_signup_edittext"
+                android:id="@+id/college_signup_edittext"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -205,13 +205,14 @@
 
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_signup_edittext" />
+                app:layout_constraintTop_toBottomOf="@+id/phone_signup_edittext" />
 
             <EditText
-                android:id="@+id/college_signup_edittext"
+                android:id="@+id/password_signup_edittext"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:visibility="gone"
                 android:background="@drawable/editbox"
                 android:fontFamily="@font/roboto_mono"
                 android:hint="password"
@@ -222,7 +223,7 @@
 
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext" />
+                app:layout_constraintTop_toBottomOf="@+id/college_signup_edittext" />
 
             <Button
                 android:id="@+id/signup_signup_button"
@@ -231,10 +232,10 @@
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rounded_button"
                 android:fontFamily="@font/roboto"
-                android:text="Sign Up"
+                android:text="Save"
                 android:textColor="#ffffff"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/college_signup_edittext" />
+                app:layout_constraintTop_toBottomOf="@+id/password_signup_edittext" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

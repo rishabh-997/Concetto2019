@@ -15,6 +15,5 @@
         app:itemIconTint="#000000"
         app:itemTextAppearance="@font/roboto"
         app:itemTextColor="#000000">
-
-    </com.google.android.material.navigation.NavigationView>
+f</com.google.android.material.navigation.NavigationView>
 </RelativeLayout>

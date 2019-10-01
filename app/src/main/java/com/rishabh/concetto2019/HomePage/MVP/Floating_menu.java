@@ -18,14 +18,17 @@ import android.widget.Toast;
 
 import com.rishabh.concetto2019.Aboutus.AboutUsActivity;
 import com.rishabh.concetto2019.Contactus.ContactusActivity;
+import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.Developers.MVP.DeveloperActivity;
 import com.rishabh.concetto2019.Profile.MVP.ProfileActivity;
 import com.rishabh.concetto2019.R;
+import com.rishabh.concetto2019.Utilities.SharedPref;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
 {
     @BindView(R.id.vNavigation)
     NavigationView navigationView;
+    SharedPref sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
     {
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
         ButterKnife.bind(this,view);
+        sharedPref = new SharedPref(getContext());
 
        navigationView.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
@@ -59,7 +63,15 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
                     startActivity(new Intent(getActivity(), DeveloperActivity.class));
                     break;
                 case R.id.menu_profile:
-                    startActivity(new Intent(getActivity(), ProfileActivity.class));
+                    if(sharedPref.getSetup()=="")
+                    {
+                        Toast.makeText(getContext(), "Please Register First", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getActivity(), SignupActivity.class));
+                    }
+                    else
+                    {
+                        startActivity(new Intent(getActivity(),ProfileActivity.class));
+                    }
                     break;
                 case R.id.menu_contactus:
                     startActivity(new Intent(getActivity(), ContactusActivity.class));

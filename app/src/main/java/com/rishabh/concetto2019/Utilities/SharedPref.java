@@ -10,8 +10,12 @@ import android.content.SharedPreferences;
 public class SharedPref
 {
     private static final String PREF_NAME = "welcome";
-    private static final String KEY_ACCESS_TOKEN = "access_token";
     private static final String KEY_EMAIL = "email";
+    private static final String KEY_NAME = "name";
+    private static final String KEY_PHONE = "phone";
+    private static final String KEY_COLLEGE = "college";
+    private static final String KEY_SETUP = "setup";
+
     int Private_mode=0;
 
     SharedPreferences pref;
@@ -25,13 +29,6 @@ public class SharedPref
         editor=pref.edit();
     }
 
-    public String getAccessToken() {
-        return pref.getString(KEY_ACCESS_TOKEN, "");
-    }
-    public void setAccessToken(String accessToken) {
-        editor.putString(KEY_ACCESS_TOKEN, accessToken);
-        editor.commit();
-    }
 
     public String getEmail() {
         return pref.getString(KEY_EMAIL, "");
@@ -40,5 +37,41 @@ public class SharedPref
         editor.putString(KEY_EMAIL, email);
         editor.commit();
     }
+
+
+    public String getName() {
+        return pref.getString(KEY_NAME, "");
+    }
+    public void setName(String name) {
+        editor.putString(KEY_NAME, name);
+        editor.commit();
+    }
+
+
+    public String getCollege() {
+        return pref.getString(KEY_COLLEGE, "");
+    }
+    public void setCollege(String college) {
+        editor.putString(KEY_COLLEGE, college);
+        editor.commit();
+    }
+
+    public String getPhone() {
+        return pref.getString(KEY_PHONE, "");
+    }
+    public void setPhone(String phone) {
+        editor.putString(KEY_PHONE, phone);
+        editor.commit();
+    }
+
+    public String getSetup() {
+        return pref.getString(KEY_SETUP, "");
+    }
+    public void setSetup(String setup) {
+        editor.putString(KEY_SETUP, setup);
+        editor.commit();
+    }
+
+
 
 }

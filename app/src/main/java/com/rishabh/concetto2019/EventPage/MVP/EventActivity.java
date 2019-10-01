@@ -1,10 +1,12 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,7 +78,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
                     String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                     String registerUrl = db.child("Register url").getValue().toString();
 
-                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl);
+                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl,organisedBy);
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size()+"");
                 }
@@ -101,6 +103,9 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
 
     @Override
     public void onRuleClick(int position) {
+        Uri uri = Uri.parse(lists.get(position).getRule_book_url()); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
 
     }
 
@@ -111,6 +116,11 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
 
     @Override
     public void onRegisterClick(int position) {
+        Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse(lists.get(position).getRegister_url()); // missing 'http://' will cause crashed
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+
 
     }
 
