@@ -17,11 +17,9 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
 
     SignupContract.presenter presenter;
 
-    @BindView(R.id.phone_signup_edittext)
-    EditText nameSignupEditText;
+
     @BindView(R.id.name_signup_edittext)
     EditText emailSignupEditText;
-
     @BindView(R.id.phone_signup_edittext)
     EditText phoneSignupEditText;
     @BindView(R.id.password_signup_edittext)
@@ -29,6 +27,7 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
     @BindView(R.id.signup_signup_button)
     Button signupButton;
 
+    private EditText nameSignupEditText;
     private String name;
     private String email;
     private String phone;
@@ -41,6 +40,7 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signuppage);
+        nameSignupEditText = findViewById(R.id.name_signup_edittext);
 
         presenter = new SignupPresenter(this);
         ButterKnife.bind(this);
@@ -52,16 +52,16 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
     {
         signupButton.setOnClickListener(v ->
         {
-            name = nameSignupEditText.getText().toString();
-            email = emailSignupEditText.getText().toString();
-            phone = phoneSignupEditText.getText().toString();
-            college = collegeSignupEditText.getText().toString();
+            name = nameSignupEditText.getText().toString().trim();
+            email = emailSignupEditText.getText().toString().trim();
+            phone = phoneSignupEditText.getText().toString().trim();
+            college = collegeSignupEditText.getText().toString().trim();
 
             if (name.length()==0){
                 nameSignupEditText.setError("Please enter your name");
                 nameSignupEditText.requestFocus();
             }
-            else if (email.length()==0){
+            else if (emailSignupEditText.length()==0){
                 emailSignupEditText.setError("Please enter your email address");
                 emailSignupEditText.requestFocus();
             }
@@ -69,7 +69,7 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
                 phoneSignupEditText.setError("Please enter your mobile number");
                 phoneSignupEditText.requestFocus();
             }
-            else if (college.length()==0){
+            else if (collegeSignupEditText.length()==0){
                 collegeSignupEditText.setError("Please enter the name of your college");
                 collegeSignupEditText.requestFocus();
             }
