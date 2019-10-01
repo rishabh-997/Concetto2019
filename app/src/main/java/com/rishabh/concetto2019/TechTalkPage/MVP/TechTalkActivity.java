@@ -21,6 +21,7 @@ import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.TechTalkPage.Model.TechtalkModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -39,6 +40,8 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
         setContentView(R.layout.activity_tech_talk_page);
         recycler=findViewById(R.id.tech_recycler_view);
         getSupportActionBar().hide();
+        list=new ArrayList<>();
+
         recycler.setHasFixedSize(false);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
@@ -48,13 +51,13 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                    for(DataSnapshot db: dataSnapshot.getChildren()){
-                       String aboutspeaker = dataSnapshot.child("About Speaker").getValue().toString();
-                       String time = dataSnapshot.child("Date").getValue().toString();
-                       String date=dataSnapshot.child("Field").getValue().toString();
-                       String field=dataSnapshot.child("Location").getValue().toString();
-                       String location=dataSnapshot.child("Speaker").getValue().toString();
-                       String speaker=dataSnapshot.child("Time").getValue().toString();
-                       String name=dataSnapshot.child("EventName").getValue().toString();
+                       String aboutspeaker = db.child("About Speaker").getValue().toString();
+                       String time = db.child("Date").getValue().toString();
+                       String date=db.child("Field").getValue().toString();
+                       String field=db.child("Location").getValue().toString();
+                       String location=db.child("Speaker").getValue().toString();
+                       String speaker=db.child("Time").getValue().toString();
+                       String name=db.child("EventName").getValue().toString();
 
                        techtalkModel=new TechtalkModel(aboutspeaker,date,field,location,time,name);
                        list.add(techtalkModel);

@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.rishabh.concetto2019.EventPage.MVP.EventActivity;
+import com.rishabh.concetto2019.EventPage.MVP.EventActivityNew;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
@@ -179,7 +180,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                             finish();
                         } else if (v.getId() == R.id.button_event) {
 
-                            startActivity(new Intent(this, EventActivity.class));
+                            startActivity(new Intent(this, EventActivityNew.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
                             finish();
                         } else if (v.getId() == R.id.button_techtalks) {
