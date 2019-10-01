@@ -42,7 +42,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EventActivityNew extends AppCompatActivity
-        implements  EventContract.view, EventAdapter.OnNoteListener ,NavigationView.OnNavigationItemSelectedListener {
+        implements EventContract.view, EventAdapter.OnNoteListener, NavigationView.OnNavigationItemSelectedListener {
     EventContract.presenter presenter;
     List<EventPageList> lists = new ArrayList<>();
     EventAdapter adapter;
@@ -72,44 +72,15 @@ public class EventActivityNew extends AppCompatActivity
 
         ButterKnife.bind(this);
         navigationView.setNavigationItemSelectedListener(this);
-        up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
-        down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
+        up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+        down = AnimationUtils.loadAnimation(this, R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new EventAdapter(this,lists,  this, up, down,rotate);
+        adapter = new EventAdapter(this, lists, this, up, down, rotate);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Events");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                lists.clear();
-                for(DataSnapshot db: dataSnapshot.getChildren()){
-                    String name = db.child("Name").getValue().toString();
-                    String organiser_1 = db.child("Organizer1").getValue().toString();
-                    String organiser_2 = db.child("Organizer2").getValue().toString();
-                    String organiser_1_phone = db.child("Organizer1 Phone").getValue().toString();
-                    String organiser_2_phone = db.child("Organizer2 Phone").getValue().toString();
-                    String organisedBy = db.child("Organised By").getValue().toString();
-                    String prizes = db.child("Prizes").getValue().toString();
-                    String aboutUrl = db.child("About url").getValue().toString();
-                    String ruleBookUrl = db.child("Rule Book url").getValue().toString();
-                    String registerUrl = db.child("Register url").getValue().toString();
-
-                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl);
-                    lists.add(eventPageListlist);
-                    Log.i("Testing firebase", lists.size()+"");
-                }
-                recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
     }
 
     @Override
@@ -143,7 +114,39 @@ public class EventActivityNew extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cse) {
+        if (id == R.id.all){
+
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    lists.clear();
+                    for (DataSnapshot db : dataSnapshot.getChildren()) {
+                        String name = db.child("Name").getValue().toString();
+                        String organiser_1 = db.child("Organizer1").getValue().toString();
+                        String organiser_2 = db.child("Organizer2").getValue().toString();
+                        String organiser_1_phone = db.child("Organizer1 Phone").getValue().toString();
+                        String organiser_2_phone = db.child("Organizer2 Phone").getValue().toString();
+                        String organisedBy = db.child("Organised By").getValue().toString();
+                        String prizes = db.child("Prizes").getValue().toString();
+                        String aboutUrl = db.child("About url").getValue().toString();
+                        String ruleBookUrl = db.child("Rule Book url").getValue().toString();
+                        String registerUrl = db.child("Register url").getValue().toString();
+
+                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl);
+                        lists.add(eventPageListlist);
+                        Log.i("Testing firebase", lists.size() + "");
+                    }
+                    recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+        else if (id == R.id.cse) {
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -167,7 +170,7 @@ public class EventActivityNew extends AppCompatActivity
                         }
 
                     }
-                    adapter = new EventAdapter(EventActivityNew.this,lists,  EventActivityNew.this, up, down,rotate);
+                    adapter = new EventAdapter(EventActivityNew.this, lists, EventActivityNew.this, up, down, rotate);
 
                     adapter.notifyDataSetChanged();
                     recyclerView.setAdapter(adapter);
@@ -204,10 +207,10 @@ public class EventActivityNew extends AppCompatActivity
                             eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl);
                             lists.add(eventPageListlist);
                         }
-                       // adapter=new EventAdapter(EventActivityNew.this,lists);
+                        // adapter=new EventAdapter(EventActivityNew.this,lists);
 
                     }
-                    adapter = new EventAdapter(EventActivityNew.this,lists,  EventActivityNew.this, up, down,rotate);
+                    adapter = new EventAdapter(EventActivityNew.this, lists, EventActivityNew.this, up, down, rotate);
 
                     adapter.notifyDataSetChanged();
                     recyclerView.setAdapter(adapter);
