@@ -48,16 +48,8 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
+        getSupportActionBar().hide();
 
-<<<<<<< HEAD
-        setup();
-    }
-
-    private void setup()
-    {
-        lists.add(new EventPageList("Buffet Money","https://www.github.com/rishabh-997","https://www.github.com/rishabh-997","Rishabh","Kritik","9935685103","6209274679","Prize worth rs 5000","https://www.github.com/rishabh-997"));
-=======
->>>>>>> e4d653d5577e6b880d003e20588a6ee3f1079fe5
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this,lists,this, up, down,rotate);
@@ -108,8 +100,6 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         /**
          * dekha do rule book
          */
-
-
 
     }
 

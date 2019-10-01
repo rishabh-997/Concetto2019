@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.TechTalkPage.MVP;
+package com.rishabh.concetto2019.TechTalkPage.Model;
 
 public class TechtalkModel {
 

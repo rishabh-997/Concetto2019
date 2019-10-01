@@ -1,4 +1,4 @@
-package com.rishabh.concetto2019.WorkshopPage.MVP;
+package com.rishabh.concetto2019.WorkshopPage.Model;
 
 public class WorkshopModel {
 

@@ -19,6 +19,7 @@ import com.rishabh.concetto2019.Authentication.LogInPage.MVP.LoginActivity;
 import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
+import com.rishabh.concetto2019.TechTalkPage.Model.TechtalkModel;
 
 import java.util.List;
 
