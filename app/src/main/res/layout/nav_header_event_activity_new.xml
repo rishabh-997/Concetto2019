@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="60dp"
+    android:layout_width="match_parent"
+    android:elevation="4dp"
+    android:layout_gravity="">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="60dp"
     android:gravity="center"
     android:orientation="vertical"
+    android:layout_marginTop="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
     <TextView
         android:layout_width="wrap_content"
@@ -16,3 +22,4 @@
 
 
 </LinearLayout>
+</androidx.cardview.widget.CardView>

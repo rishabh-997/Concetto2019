@@ -2,6 +2,8 @@ package com.rishabh.concetto2019.WorkshopPage.MVP;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,12 +32,17 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
     RecyclerView recycler;
     WorkshopModel workshopModel;
     List<WorkshopModel> list;
+    Animation up, down, rotate;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workshop_page);
+        up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+        down = AnimationUtils.loadAnimation(this, R.anim.slide_down);
+        rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
+
         recycler=findViewById(R.id.workshop_recycler);
         //getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
@@ -60,7 +67,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
                     list.add(workshopModel);
 
                 }
-                workshopAdapter=new WorkshopAdapter(list, WorkshopActivity.this);
+                workshopAdapter=new WorkshopAdapter(list, WorkshopActivity.this,up,down,rotate);
                 workshopAdapter.notifyDataSetChanged();
                 recycler.setAdapter(workshopAdapter);
 

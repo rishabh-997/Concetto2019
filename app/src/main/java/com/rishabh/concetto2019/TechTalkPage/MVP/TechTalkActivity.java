@@ -3,6 +3,8 @@ package com.rishabh.concetto2019.TechTalkPage.MVP;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +35,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
     RecyclerView recycler;
     TechtalkModel techtalkModel;
     List<TechtalkModel> list;
+    Animation up,down,rotate;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +44,10 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
         recycler=findViewById(R.id.tech_recycler_view);
         getSupportActionBar().hide();
         list=new ArrayList<>();
+        up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
+        down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
+        rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
+
 
         recycler.setHasFixedSize(false);
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -63,7 +70,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
                        list.add(techtalkModel);
 
                    }
-                   techtalkadapter=new Techtalkadapter(list,TechTalkActivity.this);
+                   techtalkadapter=new Techtalkadapter(list,TechTalkActivity.this,up,down,rotate);
                    techtalkadapter.notifyDataSetChanged();
                    recycler.setAdapter(techtalkadapter);
 
