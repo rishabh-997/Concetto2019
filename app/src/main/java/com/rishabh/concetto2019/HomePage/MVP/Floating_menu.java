@@ -1,6 +1,7 @@
 package com.rishabh.concetto2019.HomePage.MVP;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 
@@ -13,11 +14,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.rishabh.concetto2019.Authentication.LogInPage.MVP.LoginActivity;
-import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
+import com.rishabh.concetto2019.Aboutus.AboutUsActivity;
+import com.rishabh.concetto2019.Developers.MVP.DeveloperActivity;
+import com.rishabh.concetto2019.Profile.MVP.ProfileActivity;
 import com.rishabh.concetto2019.R;
 
 public class Floating_menu extends Fragment implements NavigationView.OnNavigationItemSelectedListener
@@ -36,20 +37,34 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
         View view= inflater.inflate(R.layout.fragment_menu, container, false);
         ButterKnife.bind(this,view);
 
-       /* navigationView.setNavigationItemSelectedListener(menuItem -> {
+       navigationView.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
             switch (id) {
-                case R.id.menu_login:
-            //  startActivity(new Intent(getActivity(), LoginActivity.class));
+                case R.id.menu_about:
+                    Intent intent = new Intent(getActivity(),AboutUsActivity.class);
+                    startActivity(intent);
                     break;
-                case R.id.menu_signup:
-                    startActivity(new Intent(getActivity(), SignupActivity.class));
+                case R.id.menu_report_bug:
+                    Intent i = new Intent(Intent.ACTION_SENDTO);
+                    String mailTo = "mailto:".concat("rishabh.agarwal997@gmail.com");
+                    i.setData(Uri.parse(mailTo));
+                    try {
+                        startActivity(i);
+                    } catch (android.content.ActivityNotFoundException ex) {
+                        Toast.makeText(getContext(), "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+                    }
                     break;
+                case R.id.menu_developers:
+                    startActivity(new Intent(getActivity(), DeveloperActivity.class));
+                    break;
+                case R.id.menu_profile:
+                    startActivity(new Intent(getActivity(), ProfileActivity.class));
+                    break;
+
             }
             return false;
         });
 
-*/
         return view ;
     }
 

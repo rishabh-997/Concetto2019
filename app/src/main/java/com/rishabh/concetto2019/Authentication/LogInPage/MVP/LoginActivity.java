@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 public class LoginActivity extends AppCompatActivity implements LoginContract.view {
 
     LoginContract.presenter presenter;
-    String access_token;
+    String access_token,return_email;
     SharedPref sharedPref;
 
     @BindView(R.id.email_login_edittext)
@@ -47,10 +47,11 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.vi
 
     private void setup()
     {
-        email = emailLoginEditText.getText().toString();
-        password = passwordLoginEditText.getText().toString();
+        loginButton.setOnClickListener(v ->
+        {
+            email = emailLoginEditText.getText().toString();
+            password = passwordLoginEditText.getText().toString();
 
-        loginButton.setOnClickListener(v -> {
             if(email.length()==0){
                 emailLoginEditText.setError("Enter the required fields");
             }
@@ -72,6 +73,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.vi
          */
         access_token = body.getResult().get(0).getAccess_token();
         sharedPref.setAccessToken(access_token);
+        return_email = body.getResult().get(0).getEmail();
+        sharedPref.setEmail(email);
     }
 
     @Override

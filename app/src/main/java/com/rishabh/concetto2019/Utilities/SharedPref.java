@@ -11,6 +11,7 @@ public class SharedPref
 {
     private static final String PREF_NAME = "welcome";
     private static final String KEY_ACCESS_TOKEN = "access_token";
+    private static final String KEY_EMAIL = "email";
     int Private_mode=0;
 
     SharedPreferences pref;
@@ -29,6 +30,14 @@ public class SharedPref
     }
     public void setAccessToken(String accessToken) {
         editor.putString(KEY_ACCESS_TOKEN, accessToken);
+        editor.commit();
+    }
+
+    public String getEmail() {
+        return pref.getString(KEY_EMAIL, "");
+    }
+    public void setEmail(String email) {
+        editor.putString(KEY_EMAIL, email);
         editor.commit();
     }
 

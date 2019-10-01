@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
 
     SplashContract.presenter presenter;
 
-    @BindView(R.id.layout_conscetto)
+    @BindView(R.id.layout_concetto)
     ConstraintLayout concettoLayout;
 
     private static int WELCOME_TIMEOUT = 1500;
@@ -38,14 +38,11 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
 
         Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in_long);
         concettoLayout.startAnimation(aniFade);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
+        new Handler().postDelayed(() -> {
 
-                Intent intent = new Intent(SplashActivity.this, SignupActivity.class);
-                startActivity(intent);
-                finish();
-            }
+            Intent intent = new Intent(SplashActivity.this, HomePageActivity.class);
+            startActivity(intent);
+            finish();
         },WELCOME_TIMEOUT);
     }
 }
