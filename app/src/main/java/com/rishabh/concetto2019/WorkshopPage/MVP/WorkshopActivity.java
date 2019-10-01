@@ -20,6 +20,7 @@ import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechtalkModel;
 import com.rishabh.concetto2019.TechTalkPage.MVP.Techtalkadapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -40,6 +41,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
         recycler=findViewById(R.id.workshop_recycler);
         getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
+        list=new ArrayList<>();
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Workshop");
@@ -48,15 +50,13 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot db: dataSnapshot.getChildren()){
-                    String aboutspeaker = dataSnapshot.child("About").getValue().toString();
-                    String date = dataSnapshot.child("Date").getValue().toString();
-                    String eventname=dataSnapshot.child("Eventname").getValue().toString();
-                    String location=dataSnapshot.child("location").getValue().toString();
-                    String name=dataSnapshot.child("Name").getValue().toString();
-                    String link=dataSnapshot.child("Regidtration link").getValue().toString();
-                    String time=dataSnapshot.child("Time").getValue().toString();
-
-
+                    String aboutspeaker = db.child("About").getValue().toString();
+                    String date = db.child("Date").getValue().toString();
+                    String eventname=db.child("Eventname").getValue().toString();
+                    String location=db.child("Location").getValue().toString();
+                    String name=db.child("Name").getValue().toString();
+                    String link=db.child("Registration link").getValue().toString();
+                    String time=db.child("Time").getValue().toString();
 
                     workshopModel=new WorkshopModel(aboutspeaker,date,time,location,name,link,eventname);
                     list.add(workshopModel);
@@ -65,7 +65,6 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
                 workshopAdapter=new WorkshopAdapter(list, WorkshopActivity.this);
                 workshopAdapter.notifyDataSetChanged();
                 recycler.setAdapter(workshopAdapter);
-
 
             }
 

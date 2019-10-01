@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/event_group">
+        <item
+            android:id="@+id/menu_apg"
+            android:icon="@drawable/astronaut_helmet"
+            android:title="Applied Geology" />
+        <item
+            android:id="@+id/menu_agp"
+            android:icon="@drawable/bar_chart"
+            android:title="Applied Geophysics" />
+        <item
+            android:id="@+id/menu_cse"
+            android:icon="@drawable/astronaut_helmet"
+            android:title="Computer Science" />
+        <item
+            android:id="@+id/menu_civil"
+            android:icon="@drawable/bar_chart"
+            android:title="Civil" />
+        <item
+            android:id="@+id/menu_electrical"
+            android:icon="@drawable/tool"
+            android:title="Electrical" />
+        <item
+            android:id="@+id/menu_mnc"
+            android:icon="@drawable/info_button"
+            android:title="Mathematics and Computing" />
+
+        <item
+            android:id="@+id/menu_petro"
+            android:icon="@drawable/bug"
+            android:title="Petroleum" />
+
+    </group>
+</menu>

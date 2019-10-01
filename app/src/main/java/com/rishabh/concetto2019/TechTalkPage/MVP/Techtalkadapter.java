@@ -29,7 +29,7 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view= LayoutInflater.from(context).inflate(R.layout.activity_tech_talk_page,parent,false);
+        View view= LayoutInflater.from(context).inflate(R.layout.card_techtalk,parent,false);
      return new ViewHolder(view);
     }
 
