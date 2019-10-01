@@ -33,6 +33,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -53,7 +54,8 @@ public class EventActivityNew extends AppCompatActivity
     DrawerLayout drawer;
     @BindView(R.id.event_recycler)
     RecyclerView recyclerView;
-    ActionBarDrawerToggle toggle;
+    @BindView(R.id.openDrawer)
+    ImageView openDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class EventActivityNew extends AppCompatActivity
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
 

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view"
-    >
+    tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single"
-        >
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/all"
-            android:title="All"
-
-
-            />
+            android:title="All" />
         <item
             android:id="@+id/cse"
             android:title="Computer Science and Engineering" />
@@ -24,12 +19,9 @@
         <item
             android:id="@+id/ece"
             android:title="Electronics and Communication Department" />
-
         <item
             android:id="@+id/petro"
             android:title="Petroleum Department" />
     </group>
-
-
 
 </menu>
