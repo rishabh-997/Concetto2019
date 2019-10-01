@@ -6,8 +6,9 @@ public class EventPageList {
     String organizer_phone1, organizer_phone2;
     String prize;
     String register_url;
+    String organisedBy;
 
-    public EventPageList(String event_name, String rule_book_url, String about_url, String organizer_name1, String organizer_name2, String organizer_phone1, String organizer_phone2, String prize, String register_url) {
+    public EventPageList(String event_name, String rule_book_url, String about_url, String organizer_name1, String organizer_name2, String organizer_phone1, String organizer_phone2, String prize, String register_url, String organisedBy) {
         this.event_name = event_name;
         this.rule_book_url = rule_book_url;
         this.about_url = about_url;
@@ -17,6 +18,7 @@ public class EventPageList {
         this.organizer_phone2 = organizer_phone2;
         this.prize = prize;
         this.register_url = register_url;
+        this.organisedBy = organisedBy;
     }
 
     public String getEvent_name() {
@@ -53,5 +55,9 @@ public class EventPageList {
 
     public String getRegister_url() {
         return register_url;
+    }
+
+    public String getOrganisedBy() {
+        return organisedBy;
     }
 }
