@@ -1,9 +1,8 @@
 package com.rishabh.concetto2019.EventPage.Model;
 
-public class EventPageList
-{
+public class EventPageList {
     String event_name, rule_book_url, about_url;
-    String organizer_name1,organizer_name2;
+    String organizer_name1, organizer_name2;
     String organizer_phone1, organizer_phone2;
     String prize;
     String register_url;

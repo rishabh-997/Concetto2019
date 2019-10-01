@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "744469585251",
+    "firebase_url": "https://concetto2k19.firebaseio.com",
+    "project_id": "concetto2k19",
+    "storage_bucket": "concetto2k19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744469585251:android:71bf0889628de74274c756",
+        "android_client_info": {
+          "package_name": "com.rishabh.concetto2019"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744469585251-083c312dsnt9325sq9ddfi9l89cjmrds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishabh.concetto2019",
+            "certificate_hash": "e583fb60efa438304918d1f43f03973d22c506c2"
+          }
+        },
+        {
+          "client_id": "744469585251-dt2j3f48fs4ri9rpvh0dcofe1psn2ubp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCLaXqw4dtW_Jn1uHc1qOdHDIhiv8nVyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744469585251-dt2j3f48fs4ri9rpvh0dcofe1psn2ubp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

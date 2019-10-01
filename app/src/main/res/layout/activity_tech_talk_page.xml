@@ -15,4 +15,13 @@
         android:text="login"
         android:onClick="login"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tech_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp" />
+
 </RelativeLayout>
