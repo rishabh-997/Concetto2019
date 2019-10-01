@@ -71,8 +71,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.vi
         /**
          * perform after signup effects
          */
-        access_token = body.getResult().get(0).getAccess_token();
-        sharedPref.setAccessToken(access_token);
+        //access_token = body.getResult().get(0).getAccess_token();
+        //sharedPref.setAccessToken(access_token);
         return_email = body.getResult().get(0).getEmail();
         sharedPref.setEmail(email);
     }

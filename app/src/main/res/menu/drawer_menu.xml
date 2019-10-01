@@ -11,10 +11,6 @@
             android:icon="@drawable/info_button"
             android:title="About" />
         <item
-            android:id="@+id/menu_leaderboard"
-            android:icon="@drawable/bar_chart"
-            android:title="Leaderboard" />
-        <item
             android:id="@+id/menu_developers"
             android:icon="@drawable/tool"
             android:title="Developers" />

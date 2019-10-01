@@ -17,32 +17,4 @@ public class SignupPresenter implements SignupContract.presenter
         this.mvpview = mvpview;
     }
 
-
-    @Override
-    public void doSignUp(String email, String name, String password, String phone, String college) {
-
-        clientAPI.signup(email, name, password, phone, college).enqueue(new Callback<SignUpResponse>() {
-            @Override
-            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-                if(response.isSuccessful())
-                {
-                    if(response.body().isSuccess())
-                    {
-                        mvpview.signedin();
-                    }
-                    else
-                    {
-                        mvpview.showToast(response.body().getError());
-                    }
-                }
-                else
-                    mvpview.showToast(response.message());
-            }
-
-            @Override
-            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                mvpview.showToast(t.getMessage());
-            }
-        });
-    }
 }
