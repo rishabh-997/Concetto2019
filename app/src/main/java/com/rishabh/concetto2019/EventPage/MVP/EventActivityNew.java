@@ -39,6 +39,7 @@ import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -64,6 +65,8 @@ public class EventActivityNew extends AppCompatActivity
     @BindView(R.id.leftclick)
     ImageView leftclick;
     ProgressDialog progress;
+    @BindView(R.id.event_branch)
+    TextView event_branch;
 //    @BindView(R.id.view23)
 //    SlidingSquareLoaderView view1;
 
@@ -75,15 +78,14 @@ public class EventActivityNew extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         ButterKnife.bind(this);
 
+
         setSupportActionBar(toolbar);
         progress=new ProgressDialog(this);
         progress.setMessage(" Loading Events");
         progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progress.setIndeterminate(true);
         progress.setProgress(0);
+        progress.setIndeterminate(true);
         progress.show();
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -93,19 +95,16 @@ public class EventActivityNew extends AppCompatActivity
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
-     //   view1.show();
 
-
-        leftclick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-
-            }
+        leftclick.setOnClickListener(v -> {
+            if(!drawer.isDrawerOpen(GravityCompat.START))
+                drawer.openDrawer(GravityCompat.START);
         });
 
+        openDrawer.setOnClickListener(v -> {
+            if(!drawer.isDrawerOpen(GravityCompat.START))
+                drawer.openDrawer(GravityCompat.START);
+        });
 
         navigationView.setNavigationItemSelectedListener(this);
         up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
@@ -114,7 +113,7 @@ public class EventActivityNew extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this, lists, this, up, down, rotate);
-
+        event_branch.setText("All Events");
         databaseReference = FirebaseDatabase.getInstance().getReference("Events");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -212,7 +211,7 @@ public class EventActivityNew extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.all){
-
+            event_branch.setText("All Events");
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -244,6 +243,7 @@ public class EventActivityNew extends AppCompatActivity
             });
         }
         else if (id == R.id.cse) {
+            event_branch.setText("computer Science and Engineering");
             filter("computer Science and Engineering");
 
         } else if (id == R.id.mnc) {
