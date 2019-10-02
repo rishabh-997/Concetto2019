@@ -10,7 +10,7 @@
             android:title="All" />
         <item
             android:id="@+id/cse"
-            android:title="Computer Science and Engineering" />
+            android:title="Computer Science and Engg" />
         <item
             android:id="@+id/mnc"
             android:title="Mathematics and Computing" />
@@ -19,7 +19,7 @@
             android:title="Applied Chemistry" />
         <item
             android:id="@+id/ece"
-            android:title="Electronics and Communication Department" />
+            android:title="Electronics Engineering" />
         <item
             android:id="@+id/mechanical"
             android:title="Mechanical  Engineering" />
@@ -51,13 +51,40 @@
             android:title="Environmental Engineering" />
         <item
             android:id="@+id/mineral"
-            android:title="Fuel and Mineral Engineering" />
+            android:title="Fuel and Mineral Engg" />
         <item
             android:id="@+id/mining"
             android:title="Mining Engineering" />
         <item
             android:id="@+id/minmac"
-            android:title="Mining and Machinery Engineering" />
+            android:title="Mining Machinery Engg" />
+        <item
+            android:id="@+id/arka"
+            android:title="ARKA" />
+
+        <item
+            android:id="@+id/clevr"
+            android:title="CLEVR" />
+
+        <item
+            android:id="@+id/codeism"
+            android:title="CodeISM" />
+
+        <item
+            android:id="@+id/cyberlabs"
+            android:title="Cyberlabs" />
+
+        <item
+            android:id="@+id/data_science"
+            android:title="Data Science" />
+
+        <item
+            android:id="@+id/quiz"
+            android:title="Quiz Club" />
+
+        <item
+            android:id="@+id/roboism"
+            android:title="RoboISM" />
 
 
 
