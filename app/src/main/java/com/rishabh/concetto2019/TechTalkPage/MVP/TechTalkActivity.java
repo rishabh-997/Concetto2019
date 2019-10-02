@@ -96,14 +96,6 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
         ButterKnife.bind(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        startActivity(new Intent(this, HomePageActivity.class));
-        overridePendingTransition(R.anim.slidein_to_right,R.anim.slideout_to_right);
-        finish();
-    }
-
     public void signup(View view) {
         startActivity(new Intent(this, SignupActivity.class));
     }

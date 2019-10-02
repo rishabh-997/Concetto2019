@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    >
 
     <group android:checkableBehavior="single">
         <item
@@ -9,16 +10,16 @@
             android:title="All" />
         <item
             android:id="@+id/cse"
-            android:title="Computer Science and Engineering" />
+            android:title="Computer Science and Engg" />
         <item
             android:id="@+id/mnc"
             android:title="Mathematics and Computing" />
         <item
-            android:id="@+id/ei"
-            android:title="Electronic and Instrumentation Engineering" />
+            android:id="@+id/applied_chemistry"
+            android:title="Applied Chemistry" />
         <item
             android:id="@+id/ece"
-            android:title="Electronics and Communication Department" />
+            android:title="Electronics Engineering" />
         <item
             android:id="@+id/mechanical"
             android:title="Mechanical  Engineering" />
@@ -31,9 +32,59 @@
             android:title="Chemical Department" />
 
         <item
-            android:id="@+id/ep"
-            android:title="Engineering Physics " />
+            android:id="@+id/ap"
+            android:title="Applied Physics " />
+        <item
+            android:id="@+id/agl"
+            android:title="Applied Geology" />
+        <item
+            android:id="@+id/agp"
+            android:title="Applied Geophysics" />
+        <item
+            android:id="@+id/civil"
+            android:title="Civil Engineering " />
+        <item
+            android:id="@+id/electrical"
+            android:title="Electrical Engineering" />
+        <item
+            android:id="@+id/environmental"
+            android:title="Environmental Engineering" />
+        <item
+            android:id="@+id/mineral"
+            android:title="Fuel and Mineral Engg" />
+        <item
+            android:id="@+id/mining"
+            android:title="Mining Engineering" />
+        <item
+            android:id="@+id/minmac"
+            android:title="Mining Machinery Engg" />
+        <item
+            android:id="@+id/arka"
+            android:title="ARKA" />
 
+        <item
+            android:id="@+id/clevr"
+            android:title="CLEVR" />
+
+        <item
+            android:id="@+id/codeism"
+            android:title="CodeISM" />
+
+        <item
+            android:id="@+id/cyberlabs"
+            android:title="Cyberlabs" />
+
+        <item
+            android:id="@+id/data_science"
+            android:title="Data Science" />
+
+        <item
+            android:id="@+id/quiz"
+            android:title="Quiz Club" />
+
+        <item
+            android:id="@+id/roboism"
+            android:title="RoboISM" />
 
 
 

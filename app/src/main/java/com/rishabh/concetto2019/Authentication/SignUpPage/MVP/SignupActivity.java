@@ -1,13 +1,18 @@
 package com.rishabh.concetto2019.Authentication.SignUpPage.MVP;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Toast;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.rishabh.concetto2019.HomePage.MVP.HomePageActivity;
 import com.rishabh.concetto2019.R;
+import com.rishabh.concetto2019.SplashScreen.MVP.SplashActivity;
 import com.rishabh.concetto2019.Utilities.SharedPref;
 
 import butterknife.BindView;
@@ -19,15 +24,20 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
 
 
     @BindView(R.id.name_signup_edittext)
-    EditText emailSignupEditText;
+    EditText nameSignupEditText;
+
     @BindView(R.id.phone_signup_edittext)
     EditText phoneSignupEditText;
-    @BindView(R.id.password_signup_edittext)
+
+    @BindView(R.id.college_signup_edittext)
     EditText collegeSignupEditText;
+
+    @BindView(R.id.email_signup_edittext)
+    EditText emailSignupEditText;
+
     @BindView(R.id.signup_signup_button)
     Button signupButton;
 
-    private EditText nameSignupEditText;
     private String name;
     private String email;
     private String phone;
@@ -84,6 +94,13 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
                 nameSignupEditText.setText("");
                 emailSignupEditText.setText("");
                 phoneSignupEditText.setText("");
+
+                Toast.makeText(this, "Profile Created", Toast.LENGTH_SHORT).show();
+
+                new Handler().postDelayed(() -> {
+
+                    finish();
+                },500);
             }
         });
 
