@@ -28,10 +28,10 @@ public class ContactusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         ButterKnife.bind(this);
 
-        list.add(new ContactusModel("Rishabh Agarwal","78945643654","vhdgjvjvhihjn@gmail.com",R.drawable.rishabh));
-        list.add(new ContactusModel("Rishabh Agarwal","78945643654","vhdgjvjvhihjn@gmail.com",R.drawable.rishabh));
-        list.add(new ContactusModel("Rishabh Agarwal","78945643654","vhdgjvjvhihjn@gmail.com",R.drawable.rishabh));
-        list.add(new ContactusModel("Rishabh Agarwal","78945643654","vhdgjvjvhihjn@gmail.com",R.drawable.rishabh));
+        list.add(new ContactusModel("Dr. Annavarapu Chandrashekhara Rao","Convener","+91-9471191414","acsrao@iitism.ac.in",R.mipmap.acsrao));
+        list.add(new ContactusModel("Dr. Raghvendra Kumar Choudhary","Co-Convener","+91-7766907806","raghvendra@iitism.ac.in",R.drawable.raghu));
+        list.add(new ContactusModel("Prince Kunal","Coordinator","+91-9386667625","princekunal1999@gmail.com",R.mipmap.prince));
+        list.add(new ContactusModel("Ashutosh Jindal","Co-Coordinator","+91-9468858829","aashutj12@gmail.com",R.drawable.asuthosh));
 
         adapter = new ContactusAdapter(this,list);
         recyclerView.setHasFixedSize(true);
