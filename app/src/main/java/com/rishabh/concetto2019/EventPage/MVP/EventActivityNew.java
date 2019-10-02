@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.R;
+import com.steelkiwi.library.SlidingSquareLoaderView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -63,12 +64,17 @@ public class EventActivityNew extends AppCompatActivity
     @BindView(R.id.leftclick)
     ImageView leftclick;
     ProgressDialog progress;
+//    @BindView(R.id.view23)
+//    SlidingSquareLoaderView view1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_new);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
         progress=new ProgressDialog(this);
         progress.setMessage(" Loading Events");
@@ -76,6 +82,8 @@ public class EventActivityNew extends AppCompatActivity
         progress.setIndeterminate(true);
         progress.setProgress(0);
         progress.show();
+
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -85,7 +93,8 @@ public class EventActivityNew extends AppCompatActivity
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
-        ButterKnife.bind(this);
+     //   view1.show();
+
 
         leftclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +138,7 @@ public class EventActivityNew extends AppCompatActivity
                     Log.i("Testing firebase", lists.size() + "");
                 }
                 progress.dismiss();
+              //  view1.hide();
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }

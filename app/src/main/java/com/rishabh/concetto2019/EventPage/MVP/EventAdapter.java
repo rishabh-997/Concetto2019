@@ -78,6 +78,64 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             }
 
         });
+
+        holder.cover_pic.setOnClickListener(v -> {
+
+            if (holder.constraintLayout.isShown()) {
+                holder.constraintLayout.startAnimation(up);
+
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        holder.constraintLayout.setVisibility(View.GONE);
+                        holder.arrow.startAnimation(rotate);
+                    }
+                };
+                countDownTimerStatic.start();
+
+            } else {
+                holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.arrow.startAnimation(rotate);
+                holder.constraintLayout.startAnimation(down);
+            }
+
+        });
+
+        holder.event_name.setOnClickListener(v -> {
+
+            if (holder.constraintLayout.isShown()) {
+                holder.constraintLayout.startAnimation(up);
+
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        holder.constraintLayout.setVisibility(View.GONE);
+                        holder.arrow.startAnimation(rotate);
+                    }
+                };
+                countDownTimerStatic.start();
+
+            } else {
+                holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.arrow.startAnimation(rotate);
+                holder.constraintLayout.startAnimation(down);
+            }
+
+        });
+
+
+
+
+
+
     }
 
     @Override

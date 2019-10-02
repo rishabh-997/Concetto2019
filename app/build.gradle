@@ -5,8 +5,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.rishabh.concetto2019"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -49,5 +49,8 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
     implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.steelkiwi:sliding-square-loader-view:1.0.0'
+
+    //implementation 'com.steelkiwi:sliding-square-loader-view:1.0.0'
 
 }
