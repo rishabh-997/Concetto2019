@@ -40,8 +40,8 @@ public class DeveloperActivity extends AppCompatActivity implements DeveloperAda
 
         list.add(new Developers("Rishabh Agarwal","https://github.com/rishabh-997","https://www.linkedin.com/in/rishabh-997/","Mathematics and Commputing",R.drawable.rishabh));
         list.add(new Developers("Sanket Agarwal","https://github.com/Sanketagarwal17","https://www.linkedin.com/in/sanket-agarwal-4a1a98171/","Computer Science and Engineering",R.drawable.sanket));
-        list.add(new Developers("Sujay  Kaushik","https://github.com/rishabh-997","https://linkedin.com/rishabh-997","Mathematics and Commputing",R.drawable.astro_12));
-        list.add(new Developers("Harsh jain","https://github.com/rishabh-997","https://linkedin.com/rishabh-997","Electronic and Instrumentation",R.drawable.astro_12));
+        list.add(new Developers("Sujay Kaushik","https://github.com/sujaykaushik008","https://www.linkedin.com/in/sujay-kaushik-730827180","Mathematics and Commputing",R.drawable.sujay_kaushik));
+        list.add(new Developers("Harsh jain","https://github.com/Harshjain2000/","https://www.linkedin.com/in/harsh-jain-a8a91116a","Electronic and Instrumentation",R.drawable.harsh_jain));
 
         adapter = new DeveloperAdapter(this,list,this);
         recyclerView.setHasFixedSize(true);

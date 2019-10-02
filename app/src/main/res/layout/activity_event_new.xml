@@ -93,6 +93,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:background="#B3000000"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:itemTextColor="#FFFFFF"
         app:headerLayout="@layout/nav_header_event_activity_new"
         app:menu="@menu/activity_event_new_drawer" />
 
