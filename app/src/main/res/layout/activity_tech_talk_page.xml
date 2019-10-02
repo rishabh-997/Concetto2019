@@ -28,14 +28,15 @@
         android:layout_marginTop="60dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/roboto"
-        android:text="Techtalks"
+        android:text="TECH TALKS"
         android:textColor="#ffffff"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline12"
