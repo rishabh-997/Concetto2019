@@ -295,11 +295,36 @@ public class EventActivityNew extends AppCompatActivity
             event_branch.setText("Mining Engineering");
             filter("Mining Engineering");
 
-        } else if (id == R.id.minmac) {
-            event_branch.setText("Mining and Machinery Engineering");
-            filter("Mining and Machinery Engineering");
+        } else if (id == R.id.arka) {
+            event_branch.setText("ARKA");
+            filter("ARKA");
+
+        } else if (id == R.id.clevr) {
+            event_branch.setText("CLEVR");
+            filter("CLEVR");
+
+        } else if (id == R.id.codeism) {
+            event_branch.setText("CodeISM");
+            filter("CodeISM");
+
+        } else if (id == R.id.cyberlabs) {
+            event_branch.setText("Cyberlabs");
+            filter("Cyberlabs");
+
+        } else if (id == R.id.data_science) {
+            event_branch.setText("Data Science");
+            filter("Data Science");
+
+        } else if (id == R.id.quiz) {
+            event_branch.setText("Quiz Club");
+            filter("Quiz Club");
+
+        } else if (id == R.id.roboism) {
+            event_branch.setText("RoboISM");
+            filter("RoboISM");
 
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
