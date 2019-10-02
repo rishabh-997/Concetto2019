@@ -211,7 +211,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/blue_box_round_corner"
                 android:gravity="center"
-                android:text="Registered Events"
+                android:text="Edit Profile"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textAllCaps="true"

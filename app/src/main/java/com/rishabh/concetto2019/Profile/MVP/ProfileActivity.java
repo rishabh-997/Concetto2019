@@ -1,9 +1,12 @@
 package com.rishabh.concetto2019.Profile.MVP;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.Profile.Model.ProfileModel;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.Utilities.SharedPref;
@@ -33,7 +36,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
     @BindView(R.id.profile_event)
     TextView profile_events;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,13 @@ public class ProfileActivity extends AppCompatActivity implements ProfileContrac
         profile_phone.setText(sharedPref.getPhone());
         profile_college.setText(sharedPref.getCollege());
         profile_email.setText(sharedPref.getEmail());
+
+        profile_events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, SignupActivity.class));
+            }
+        });
 
     }
 }

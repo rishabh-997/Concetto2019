@@ -67,9 +67,6 @@ public class EventActivityNew extends AppCompatActivity
     ProgressDialog progress;
     @BindView(R.id.event_branch)
     TextView event_branch;
-//    @BindView(R.id.view23)
-//    SlidingSquareLoaderView view1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,7 +134,6 @@ public class EventActivityNew extends AppCompatActivity
                     Log.i("Testing firebase", lists.size() + "");
                 }
                 progress.dismiss();
-                //  view1.hide();
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
