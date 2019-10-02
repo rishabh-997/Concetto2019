@@ -61,6 +61,59 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
             }
         });
 
+        holder.eventname.setOnClickListener(v -> {
+
+            if (holder.constraintLayout.isShown()) {
+                holder.constraintLayout.startAnimation(up);
+
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        holder.constraintLayout.setVisibility(View.GONE);
+                        holder.arrow.startAnimation(rotate);
+                    }
+                };
+                countDownTimerStatic.start();
+
+            } else {
+                holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.arrow.startAnimation(rotate);
+                holder.constraintLayout.startAnimation(down);
+            }
+
+        });
+
+
+        holder.cover.setOnClickListener(v -> {
+
+            if (holder.constraintLayout.isShown()) {
+                holder.constraintLayout.startAnimation(up);
+
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        holder.constraintLayout.setVisibility(View.GONE);
+                        holder.arrow.startAnimation(rotate);
+                    }
+                };
+                countDownTimerStatic.start();
+
+            } else {
+                holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.arrow.startAnimation(rotate);
+                holder.constraintLayout.startAnimation(down);
+            }
+
+        });
+
         holder.arrow.setOnClickListener(v -> {
 
             if (holder.constraintLayout.isShown()) {
@@ -98,11 +151,11 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView about,date,eventname,name,time,location,link;
-        ImageView arrow;
+        ImageView arrow,cover;
         ConstraintLayout constraintLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
+           cover=itemView.findViewById(R.id.event_cover);
             about = itemView.findViewById(R.id.event_about);
             arrow = itemView.findViewById(R.id.event_arrow);
             date = itemView.findViewById(R.id.time);

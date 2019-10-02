@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.TechTalkPage.MVP;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,7 +37,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
     TechtalkModel techtalkModel;
     List<TechtalkModel> list;
     Animation up,down,rotate;
-
+   ProgressDialog progress;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +45,12 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
         recycler=findViewById(R.id.tech_recycler_view);
         getSupportActionBar().hide();
         list=new ArrayList<>();
+        progress=new ProgressDialog(this);
+        progress.setMessage(" Loading Events");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(true);
+        progress.setProgress(0);
+        progress.show();
         up = AnimationUtils.loadAnimation(this,R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
@@ -70,6 +77,7 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
                        list.add(techtalkModel);
 
                    }
+                   progress.dismiss();
                    techtalkadapter=new Techtalkadapter(list,TechTalkActivity.this,up,down,rotate);
                    techtalkadapter.notifyDataSetChanged();
                    recycler.setAdapter(techtalkadapter);

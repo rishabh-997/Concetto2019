@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.WorkshopPage.MVP;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -34,7 +35,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
     List<WorkshopModel> list;
     Animation up, down, rotate;
 
-
+ProgressDialog progress;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +43,12 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
         up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         down = AnimationUtils.loadAnimation(this, R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
-
+        progress=new ProgressDialog(this);
+        progress.setMessage(" Loading Events");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(true);
+        progress.setProgress(0);
+        progress.show();
         recycler=findViewById(R.id.workshop_recycler);
         //getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
@@ -67,6 +73,7 @@ public class WorkshopActivity extends AppCompatActivity implements WorkshopContr
                     list.add(workshopModel);
 
                 }
+                progress.dismiss();
                 workshopAdapter=new WorkshopAdapter(list, WorkshopActivity.this,up,down,rotate);
                 workshopAdapter.notifyDataSetChanged();
                 recycler.setAdapter(workshopAdapter);

@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.R;
+import com.steelkiwi.library.SlidingSquareLoaderView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -37,6 +39,7 @@ import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -61,14 +64,28 @@ public class EventActivityNew extends AppCompatActivity
     ImageView openDrawer;
     @BindView(R.id.leftclick)
     ImageView leftclick;
+    ProgressDialog progress;
+    @BindView(R.id.event_branch)
+    TextView event_branch;
+//    @BindView(R.id.view23)
+//    SlidingSquareLoaderView view1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_new);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
 
+
+        setSupportActionBar(toolbar);
+        progress = new ProgressDialog(this);
+        progress.setMessage(" Loading Events");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setProgress(0);
+        progress.setIndeterminate(true);
+        progress.show();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -78,18 +95,16 @@ public class EventActivityNew extends AppCompatActivity
         toggle.setDrawerIndicatorEnabled(true);
         toggle.syncState();
         presenter = new EventPresenter(this);
-        ButterKnife.bind(this);
 
-        leftclick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-
-            }
+        leftclick.setOnClickListener(v -> {
+            if (!drawer.isDrawerOpen(GravityCompat.START))
+                drawer.openDrawer(GravityCompat.START);
         });
 
+        openDrawer.setOnClickListener(v -> {
+            if (!drawer.isDrawerOpen(GravityCompat.START))
+                drawer.openDrawer(GravityCompat.START);
+        });
 
         navigationView.setNavigationItemSelectedListener(this);
         up = AnimationUtils.loadAnimation(this, R.anim.slide_up);
@@ -98,7 +113,7 @@ public class EventActivityNew extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this, lists, this, up, down, rotate);
-
+        event_branch.setText("All Events");
         databaseReference = FirebaseDatabase.getInstance().getReference("Events");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -117,10 +132,12 @@ public class EventActivityNew extends AppCompatActivity
                     String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                     String registerUrl = db.child("Register url").getValue().toString();
 
-                    eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
+                    eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size() + "");
                 }
+                progress.dismiss();
+                //  view1.hide();
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -134,25 +151,24 @@ public class EventActivityNew extends AppCompatActivity
     }
 
 
-    void  filter(String a){
-        int n=lists.size();
-        List<EventPageList> listnew=new ArrayList<>();
-        for(int i=0; i<n; i++ ){
-            if(lists.get(i).getOrganisedBy().equals(a)){
+    void filter(String a) {
+        int n = lists.size();
+        List<EventPageList> listnew = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if (lists.get(i).getOrganisedBy().equals(a)) {
                 String name = lists.get(i).getEvent_name().toString();
                 String organiser_1 = lists.get(i).getOrganizer_name1().toString();
                 String organiser_2 = lists.get(i).getOrganizer_name2().toString();
                 String organiser_1_phone = lists.get(i).getOrganizer_phone1().toString();
                 String organiser_2_phone = lists.get(i).getOrganizer_phone2().toString();
                 String organisedBy = lists.get(i).getOrganisedBy().toString();
-                String prizes =lists.get(i).getPrize().toString();
+                String prizes = lists.get(i).getPrize().toString();
                 String aboutUrl = lists.get(i).getAbout_url().toString();
                 String ruleBookUrl = lists.get(i).getRule_book_url().toString();
                 String registerUrl = lists.get(i).getRegister_url().toString();
 
-                eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
+                eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
                 listnew.add(eventPageListlist);
-
 
 
             }
@@ -162,6 +178,7 @@ public class EventActivityNew extends AppCompatActivity
             adapter.notifyDataSetChanged();
         }
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -193,8 +210,8 @@ public class EventActivityNew extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.all){
-
+        if (id == R.id.all) {
+            event_branch.setText("All Events");
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -211,7 +228,7 @@ public class EventActivityNew extends AppCompatActivity
                         String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                         String registerUrl = db.child("Register url").getValue().toString();
 
-                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl,organisedBy);
+                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
                         lists.add(eventPageListlist);
                         Log.i("Testing firebase", lists.size() + "");
                     }
@@ -224,17 +241,67 @@ public class EventActivityNew extends AppCompatActivity
 
                 }
             });
-        }
-        else if (id == R.id.cse) {
-            filter("computer Science and Engineering");
+        } else if (id == R.id.cse) {
+            event_branch.setText("Computer Science and Engineering");
+            filter("Computer Science and Engineering");
 
         } else if (id == R.id.mnc) {
-             filter("Mathematics and Computing");
+            event_branch.setText("Mathematics and Computing");
+            filter("Mathematics and Computing");
         } else if (id == R.id.petro) {
+            event_branch.setText("Petroleum Engineering");
+            filter("Petroleum Engineering");
 
-        } else if (id == R.id.ei) {
-
+        } else if (id == R.id.applied_chemistry) {
+            event_branch.setText("Applied Chemistry");
+            filter("Applied Chemistry");
         } else if (id == R.id.ece) {
+            event_branch.setText("Electronics and Communication");
+            filter("electronics and communication");
+
+        } else if (id == R.id.mechanical) {
+            event_branch.setText("Mechanical Engineering");
+            filter("Mechanical Engineering");
+
+        } else if (id == R.id.chemical) {
+            event_branch.setText("Chemical Engineering");
+            filter("Chemical Engineering");
+
+        } else if (id == R.id.ap) {
+            event_branch.setText("Applied Physics");
+            filter("Applied Physics");
+
+        } else if (id == R.id.agl) {
+            event_branch.setText("Applied Geology");
+            filter("Applied Geology");
+
+        } else if (id == R.id.agp) {
+            event_branch.setText("Applied Geophysics");
+            filter("Applied Geophysics");
+
+        } else if (id == R.id.civil) {
+            event_branch.setText("Civil Engineering");
+            filter("Civil Engineering");
+
+        } else if (id == R.id.electrical) {
+            event_branch.setText("Electrical Engineering");
+            filter("Electrical Engineering");
+
+        } else if (id == R.id.environmental) {
+            event_branch.setText("Environmental Engineering");
+            filter("Environmental Engineering");
+
+        } else if (id == R.id.mineral) {
+            event_branch.setText("Fuel and Mineral Engineering");
+            filter("Fuel and Mineral Engineering");
+
+        } else if (id == R.id.mining) {
+            event_branch.setText("Mining Engineering");
+            filter("Mining Engineering");
+
+        } else if (id == R.id.minmac) {
+            event_branch.setText("Mining and Machinery Engineering");
+            filter("Mining and Machinery Engineering");
 
         }
 
@@ -258,7 +325,7 @@ public class EventActivityNew extends AppCompatActivity
 
     @Override
     public void onRegisterClick(int position) {
-      //  Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
         Uri uri = Uri.parse(lists.get(position).getRegister_url()); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);

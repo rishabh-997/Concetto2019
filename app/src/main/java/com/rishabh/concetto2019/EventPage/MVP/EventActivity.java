@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,6 +46,9 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
     @BindView(R.id.event_recycler)
     RecyclerView recyclerView;
 
+    private ProgressDialog progress;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +59,13 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         down = AnimationUtils.loadAnimation(this,R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
         getSupportActionBar().hide();
+
+        progress=new ProgressDialog(this);
+        progress.setMessage(" Loading Events");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(true);
+        progress.setProgress(0);
+        progress.show();
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -82,6 +93,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size()+"");
                 }
+                progress.dismiss();
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }

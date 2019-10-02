@@ -12,15 +12,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_event"
-            android:visibility="gone"
+        <include
+            android:id="@+id/include"
+            layout="@layout/app_bar_event_activity_new"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_event" />
+
+        <!--<com.steelkiwi.library.SlidingSquareLoaderView-->
+            <!--android:id="@+id/view23"-->
+            <!--android:layout_width="121dp"-->
+            <!--android:layout_height="76dp"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--app:layout_constraintRight_toRightOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent"-->
+            <!--app:sslv_background_color="@color/background"-->
+            <!--app:sslv_end_gradient_color="@color/end_gradient_color"-->
+            <!--app:sslv_square_size="@dimen/square_size"-->
+            <!--app:sslv_start_gradient_color="@color/start_gradient_color" />-->
+
+        <ImageView
+            android:id="@+id/openDrawer"
+            android:layout_width="39dp"
+            android:layout_height="79dp"
+            android:src="@drawable/event_vector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/leftclick"
+            android:layout_width="31dp"
+            android:layout_height="25dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/left_arrow_purple"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_event"
+            android:layout_width="395dp"
             android:layout_height="0dp"
-            android:background="#1F1F35">
+            android:layout_marginTop="140dp"
+            android:background="#1F1F35"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -40,35 +84,6 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-        <include
-            android:id="@+id/include"
-            layout="@layout/app_bar_event_activity_new"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar_event" />
-
-
-        <ImageView
-            android:id="@+id/openDrawer"
-            android:layout_width="39dp"
-            android:layout_height="79dp"
-            android:src="@drawable/event_vector"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/leftclick"
-            android:layout_width="31dp"
-            android:layout_height="31dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/left_arrow_purple"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -78,6 +93,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+        android:background="#B3000000"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:itemTextColor="#FFFFFF"
         app:headerLayout="@layout/nav_header_event_activity_new"
         app:menu="@menu/activity_event_new_drawer" />
 
