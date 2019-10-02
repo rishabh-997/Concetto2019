@@ -1,5 +1,6 @@
 package com.rishabh.concetto2019.EventPage.MVP;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -61,6 +62,7 @@ public class EventActivityNew extends AppCompatActivity
     ImageView openDrawer;
     @BindView(R.id.leftclick)
     ImageView leftclick;
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,12 @@ public class EventActivityNew extends AppCompatActivity
         setContentView(R.layout.activity_event_new);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        progress=new ProgressDialog(this);
+        progress.setMessage(" Loading Events");
+        progress.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progress.setIndeterminate(true);
+        progress.setProgress(0);
+        progress.show();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -121,6 +128,7 @@ public class EventActivityNew extends AppCompatActivity
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size() + "");
                 }
+                progress.dismiss();
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
