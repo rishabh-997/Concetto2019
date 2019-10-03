@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -52,6 +53,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         holder.organizer_phone1.setText(model.getOrganizer_phone1());
         holder.organizer_phone2.setText(model.getOrganizer_phone2());
         holder.prize.setText(model.getPrize());
+        Picasso.get().load(model.getUrl()).into(holder.cover_pic);
+
+
+
 
         holder.arrow.setOnClickListener(v -> {
 
@@ -161,7 +166,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
             event_name = itemView.findViewById(R.id.event_name);
-            rule_book = itemView.findViewById(R.id.event_about);
+            rule_book = itemView.findViewById(R.id.rule_book);
             about = itemView.findViewById(R.id.event_about);
             arrow = itemView.findViewById(R.id.event_arrow);
             organizer_name1 = itemView.findViewById(R.id.event_contact_name1);

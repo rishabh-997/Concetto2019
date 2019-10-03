@@ -88,8 +88,9 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
                     String aboutUrl = db.child("About url").getValue().toString();
                     String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                     String registerUrl = db.child("Register url").getValue().toString();
+                    String imageurl=db.child("image url").getValue().toString();
 
-                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl,organisedBy);
+                    eventPageListlist = new EventPageList(name,ruleBookUrl,aboutUrl,organiser_1,organiser_2,organiser_1_phone,organiser_2_phone,prizes,registerUrl,organisedBy,imageurl);
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size()+"");
                 }

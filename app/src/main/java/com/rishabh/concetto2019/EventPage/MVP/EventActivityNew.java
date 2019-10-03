@@ -128,8 +128,9 @@ public class EventActivityNew extends AppCompatActivity
                     String aboutUrl = db.child("About url").getValue().toString();
                     String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                     String registerUrl = db.child("Register url").getValue().toString();
+                    String imageurl=db.child("image url").getValue().toString();
 
-                    eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
+                    eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy,imageurl);
                     lists.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size() + "");
                 }
@@ -162,8 +163,9 @@ public class EventActivityNew extends AppCompatActivity
                 String aboutUrl = lists.get(i).getAbout_url().toString();
                 String ruleBookUrl = lists.get(i).getRule_book_url().toString();
                 String registerUrl = lists.get(i).getRegister_url().toString();
+                String imageurl=lists.get(i).getUrl().toString();
 
-                eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
+                eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy,imageurl);
                 listnew.add(eventPageListlist);
 
 
@@ -223,8 +225,9 @@ public class EventActivityNew extends AppCompatActivity
                         String aboutUrl = db.child("About url").getValue().toString();
                         String ruleBookUrl = db.child("Rule Book url").getValue().toString();
                         String registerUrl = db.child("Register url").getValue().toString();
+                        String imageurl=db.child("image url").getValue().toString();
 
-                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy);
+                        eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy,imageurl);
                         lists.add(eventPageListlist);
                         Log.i("Testing firebase", lists.size() + "");
                     }
