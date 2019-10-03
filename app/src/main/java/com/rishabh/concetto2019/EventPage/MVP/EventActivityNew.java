@@ -293,8 +293,10 @@ public class EventActivityNew extends AppCompatActivity
 
         } else if (id == R.id.mining) {
             event_branch.setText("Mining Engineering");
-            filter("Mining Engineering");
-
+            filter("Mining Engineering");}
+        else if (id == R.id.minmac) {
+                event_branch.setText("Mining Machinery Engg");
+                filter("Mining Machinery Engg");
         } else if (id == R.id.arka) {
             event_branch.setText("ARKA");
             filter("ARKA");
