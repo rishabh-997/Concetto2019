@@ -108,6 +108,7 @@ public class EventActivityNew extends AppCompatActivity
         down = AnimationUtils.loadAnimation(this, R.anim.slide_down);
         rotate = AnimationUtils.loadAnimation(this, R.anim.rotate_button);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this, lists, this, up, down, rotate);
         event_branch.setText("All Events");

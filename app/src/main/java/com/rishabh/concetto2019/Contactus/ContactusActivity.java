@@ -30,7 +30,7 @@ public class ContactusActivity extends AppCompatActivity {
 
         list.add(new ContactusModel("Dr. Annavarapu Chandrashekhara Rao","Convener","+91-9471191414","acsrao@iitism.ac.in",R.mipmap.acsrao));
         list.add(new ContactusModel("Dr. Raghvendra Kumar Choudhary","Co-Convener","+91-7766907806","raghvendra@iitism.ac.in",R.drawable.raghu));
-        list.add(new ContactusModel("Prince Kunal","Coordinator","+91-9386667625","princekunal1999@gmail.com",R.mipmap.prince));
+        list.add(new ContactusModel("Prince Kunal","Coordinator","+91-9386667625","princekunal1999@gmail.com",R.mipmap.prince_kunal));
         list.add(new ContactusModel("Ashutosh Jindal","Co-Coordinator","+91-9468858829","aashutj12@gmail.com",R.drawable.asuthosh));
 
         adapter = new ContactusAdapter(this,list);
