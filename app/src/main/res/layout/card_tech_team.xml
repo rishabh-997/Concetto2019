@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:layout_margin="8dp"
+    android:background="@drawable/rounded_layout_contactus"
+    >
+    <ImageView
+        android:id="@+id/image_tech_team"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/sujay_kaushik"
+        android:layout_margin="4dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:id="@+id/name_tech_team"
+        android:text="Sridhar Goel"
+        android:layout_weight="1"
+        android:paddingLeft="28dp"
+        android:gravity="center_vertical|start"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/tech_tech_team"
+            android:text="member"
+            android:paddingLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
