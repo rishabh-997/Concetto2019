@@ -231,6 +231,8 @@ public class EventActivityNew extends AppCompatActivity
                         lists.add(eventPageListlist);
                         Log.i("Testing firebase", lists.size() + "");
                     }
+                    adapter = new EventAdapter(EventActivityNew.this, lists, EventActivityNew.this, up, down, rotate);
+
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
                 }

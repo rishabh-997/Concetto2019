@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/dev_image"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:src="@drawable/astro_10"
         android:scaleType="centerCrop"/>
 

@@ -2,15 +2,20 @@ package com.rishabh.concetto2019.TechTalkPage.Model;
 
 public class TechtalkModel {
 
-    String aboutSpeaker,date,field,location,time,name;
+    String aboutSpeaker,date,field,location,time,name,url;
 
-    public TechtalkModel(String aboutSpeaker, String date, String field, String location, String time, String name) {
+    public TechtalkModel(String aboutSpeaker, String date, String field, String location, String time, String name, String url) {
         this.aboutSpeaker = aboutSpeaker;
         this.date = date;
         this.field = field;
         this.location = location;
         this.time = time;
         this.name = name;
+        this.url = url;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     public String getName() {
