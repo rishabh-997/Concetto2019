@@ -55,6 +55,14 @@ public class SignupActivity extends AppCompatActivity implements SignupContract.
         presenter = new SignupPresenter(this);
         ButterKnife.bind(this);
         sharedPref = new SharedPref(this);
+
+        if(!sharedPref.getSetup().equals(""))
+        {
+            nameSignupEditText.setText(sharedPref.getName());
+            collegeSignupEditText.setText(sharedPref.getCollege());
+            emailSignupEditText.setText(sharedPref.getEmail());
+            phoneSignupEditText.setText(sharedPref.getPhone());
+        }
         setup();
     }
 
