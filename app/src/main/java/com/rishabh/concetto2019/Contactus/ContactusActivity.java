@@ -39,6 +39,7 @@ public class ContactusActivity extends AppCompatActivity {
 
         adapter = new ContactusAdapter(this,list);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
