@@ -19,8 +19,12 @@ public class ContactusActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.recycler_tech_team)
+    RecyclerView recyclerViewTech;
     List<ContactusModel> list = new ArrayList<>();
+    List<TechTeamModel> listTech = new ArrayList<>();
     ContactusAdapter adapter;
+    TechTeamAdapter adapterTech;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,5 +42,15 @@ public class ContactusActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        listTech.add(new TechTeamModel("Shridhar Goel","Member",R.mipmap.shridhargoel));
+        listTech.add(new TechTeamModel("Perul Jain","Member",R.mipmap.peruljain));
+        listTech.add(new TechTeamModel("Neelansh Maheshwari","Head",R.mipmap.neelansh1));
+        listTech.add(new TechTeamModel("Sirigireddy dhana Laxmi","Member",R.mipmap.dhana));
+
+        adapterTech = new TechTeamAdapter(this,listTech);
+        recyclerViewTech.setHasFixedSize(true);
+        recyclerViewTech.setNestedScrollingEnabled(false);
+        recyclerViewTech.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewTech.setAdapter(adapterTech);
     }
 }
