@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.TechTalkPage.Model.TechtalkModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -54,6 +55,8 @@ public class Techtalkadapter extends RecyclerView.Adapter<Techtalkadapter.ViewHo
         holder.date.append("\n" + list.get(position).getTime());
         holder.location.setText(list.get(position).getLocation());
         holder.name.setText(list.get(position).getName());
+        Picasso.get().load(list.get(position).getUrl()).into(holder.cover);
+
 
         holder.arrow.setOnClickListener(v -> {
 

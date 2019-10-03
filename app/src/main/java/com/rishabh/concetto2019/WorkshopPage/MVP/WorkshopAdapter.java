@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.WorkshopPage.Model.WorkshopModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -52,6 +53,8 @@ public class WorkshopAdapter extends RecyclerView.Adapter<WorkshopAdapter.ViewHo
 
        // holder.name.setText(list.get(position).getName());
         holder.eventname.setText(list.get(position).getEventname());
+
+        Picasso.get().load(list.get(position).getUrl()).into(holder.cover);
         holder.link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

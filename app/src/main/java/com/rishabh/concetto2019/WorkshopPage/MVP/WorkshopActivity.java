@@ -68,8 +68,9 @@ ProgressDialog progress;
                     String name=db.child("Name").getValue().toString();
                     String link=db.child("Registration link").getValue().toString();
                     String time=db.child("Time").getValue().toString();
+                    String url =db.child("image url").getValue().toString();
 
-                    workshopModel=new WorkshopModel(aboutspeaker,date,time,location,name,link,eventname);
+                    workshopModel=new WorkshopModel(aboutspeaker,date,time,location,name,link,eventname,url);
                     list.add(workshopModel);
 
                 }

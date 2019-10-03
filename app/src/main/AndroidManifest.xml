@@ -5,9 +5,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round">
+        android:roundIcon="@mipmap/icon">
         <activity android:name=".SplashScreen.MVP.SplashActivity"
             android:theme="@style/AppTheme2">
             <intent-filter>

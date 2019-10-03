@@ -72,8 +72,9 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
                        String location=db.child("Speaker").getValue().toString();
                        String speaker=db.child("Time").getValue().toString();
                        String name=db.child("EventName").getValue().toString();
+                       String url=db.child("image url").getValue().toString();
 
-                       techtalkModel=new TechtalkModel(aboutspeaker,date,field,location,time,name);
+                       techtalkModel=new TechtalkModel(aboutspeaker,date,field,location,time,name,url);
                        list.add(techtalkModel);
 
                    }

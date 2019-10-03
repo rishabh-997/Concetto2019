@@ -2,9 +2,16 @@ package com.rishabh.concetto2019.WorkshopPage.Model;
 
 public class WorkshopModel {
 
-     String about,date, time,location,name,registration,eventname;
+     String about;
+    String date;
+    String time;
+    String location;
+    String name;
+    String registration;
+    String eventname;
+    String url;
 
-    public WorkshopModel(String about, String date, String time, String location, String name, String registration, String eventname) {
+    public WorkshopModel(String about, String date, String time, String location, String name, String registration, String eventname, String url) {
         this.about = about;
         this.date = date;
         this.time = time;
@@ -12,7 +19,13 @@ public class WorkshopModel {
         this.name = name;
         this.registration = registration;
         this.eventname = eventname;
+        this.url = url;
     }
+
+    public String getUrl() { return url; }
+
+    public void setUrl(String url) { this.url = url; }
+
 
     public String getEventname() {
         return eventname;
