@@ -84,7 +84,7 @@
                         android:layout_height="130dp"
                         android:layout_weight="1"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/kritik" />
+                        android:src="@mipmap/kritik" />
 
                     <LinearLayout
                         android:layout_width="0dp"
