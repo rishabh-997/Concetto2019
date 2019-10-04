@@ -52,6 +52,7 @@ public class EventActivityNew extends AppCompatActivity
         implements EventContract.view, EventAdapter.OnNoteListener, NavigationView.OnNavigationItemSelectedListener {
     EventContract.presenter presenter;
     List<EventPageList> lists = new ArrayList<>();
+    List<EventPageList> listnew = new ArrayList<>();
     EventAdapter adapter;
     Animation up, down, rotate;
     NavigationView navigationView;
@@ -110,7 +111,7 @@ public class EventActivityNew extends AppCompatActivity
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new EventAdapter(this, lists, this, up, down, rotate);
+        adapter = new EventAdapter(this, listnew, this, up, down, rotate);
         event_branch.setText("All Events");
         databaseReference = FirebaseDatabase.getInstance().getReference("Events");
 
@@ -133,6 +134,7 @@ public class EventActivityNew extends AppCompatActivity
 
                     eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy,imageurl);
                     lists.add(eventPageListlist);
+                    listnew.add(eventPageListlist);
                     Log.i("Testing firebase", lists.size() + "");
                 }
                 progress.dismiss();
@@ -151,7 +153,7 @@ public class EventActivityNew extends AppCompatActivity
 
     void filter(String a) {
         int n = lists.size();
-        List<EventPageList> listnew = new ArrayList<>();
+        listnew.clear();
         for (int i = 0; i < n; i++) {
             if (lists.get(i).getOrganisedBy().equals(a)) {
                 String name = lists.get(i).getEvent_name().toString();
@@ -214,7 +216,7 @@ public class EventActivityNew extends AppCompatActivity
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    lists.clear();
+                    listnew.clear();
                     for (DataSnapshot db : dataSnapshot.getChildren()) {
                         String name = db.child("Name").getValue().toString();
                         String organiser_1 = db.child("Organizer1").getValue().toString();
@@ -229,10 +231,10 @@ public class EventActivityNew extends AppCompatActivity
                         String imageurl=db.child("image url").getValue().toString();
 
                         eventPageListlist = new EventPageList(name, ruleBookUrl, aboutUrl, organiser_1, organiser_2, organiser_1_phone, organiser_2_phone, prizes, registerUrl, organisedBy,imageurl);
-                        lists.add(eventPageListlist);
-                        Log.i("Testing firebase", lists.size() + "");
+                        listnew.add(eventPageListlist);
+                        Log.i("Testing firebase", listnew.size() + "");
                     }
-                    adapter = new EventAdapter(EventActivityNew.this, lists, EventActivityNew.this, up, down, rotate);
+                    adapter = new EventAdapter(EventActivityNew.this, listnew, EventActivityNew.this, up, down, rotate);
 
                     recyclerView.setAdapter(adapter);
                     adapter.notifyDataSetChanged();
@@ -341,7 +343,7 @@ public class EventActivityNew extends AppCompatActivity
 
     @Override
     public void onRuleClick(int position) {
-        Uri uri = Uri.parse(lists.get(position).getRule_book_url()); // missing 'http://' will cause crashed
+        Uri uri = Uri.parse(listnew.get(position).getRule_book_url()); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
 
@@ -355,7 +357,7 @@ public class EventActivityNew extends AppCompatActivity
     @Override
     public void onRegisterClick(int position) {
         //  Toast.makeText(this, "working", Toast.LENGTH_SHORT).show();
-        Uri uri = Uri.parse(lists.get(position).getRegister_url()); // missing 'http://' will cause crashed
+        Uri uri = Uri.parse(listnew.get(position).getRegister_url()); // missing 'http://' will cause crashed
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
 
