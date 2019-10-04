@@ -25,7 +25,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
     Context context;
     List<EventPageList> list;
     OnNoteListener onNoteListener;
-    Animation up, down, rotate;
+    Animation up, down, rotate,rotateButton;
 
     public EventAdapter(Context context, List<EventPageList> list, OnNoteListener onNoteListener, Animation up, Animation down, Animation rotate) {
         this.context = context;
@@ -62,6 +62,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
             if (holder.constraintLayout.isShown()) {
                 holder.constraintLayout.startAnimation(up);
+                holder.arrow.startAnimation(rotate);
 
                 CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
                     @Override
@@ -71,16 +72,28 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     @Override
                     public void onFinish() {
                         holder.constraintLayout.setVisibility(View.GONE);
-                        holder.arrow.startAnimation(rotate);
+                        Picasso.get().load(R.drawable.left_arrow).into(holder.arrow);
+
                     }
                 };
                 countDownTimerStatic.start();
+            } else  {
+                holder.constraintLayout.startAnimation(down);holder.constraintLayout.setVisibility(View.VISIBLE);
 
-            } else {
-                holder.constraintLayout.setVisibility(View.VISIBLE);
                 holder.arrow.startAnimation(rotate);
-                holder.constraintLayout.startAnimation(down);
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Picasso.get().load(R.drawable.left_arrow_invert).into(holder.arrow);
+                    }
+                };
+                countDownTimerStatic.start();
             }
+
 
         });
 
@@ -88,6 +101,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
             if (holder.constraintLayout.isShown()) {
                 holder.constraintLayout.startAnimation(up);
+                holder.arrow.startAnimation(rotate);
 
                 CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
                     @Override
@@ -97,16 +111,28 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     @Override
                     public void onFinish() {
                         holder.constraintLayout.setVisibility(View.GONE);
-                        holder.arrow.startAnimation(rotate);
+                        Picasso.get().load(R.drawable.left_arrow).into(holder.arrow);
+
                     }
                 };
                 countDownTimerStatic.start();
-
             } else {
-                holder.constraintLayout.setVisibility(View.VISIBLE);
+                holder.constraintLayout.startAnimation(down);holder.constraintLayout.setVisibility(View.VISIBLE);
+
                 holder.arrow.startAnimation(rotate);
-                holder.constraintLayout.startAnimation(down);
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Picasso.get().load(R.drawable.left_arrow_invert).into(holder.arrow);
+                    }
+                };
+                countDownTimerStatic.start();
             }
+
 
         });
 
@@ -114,6 +140,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
             if (holder.constraintLayout.isShown()) {
                 holder.constraintLayout.startAnimation(up);
+                holder.arrow.startAnimation(rotate);
 
                 CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
                     @Override
@@ -123,15 +150,26 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
                     @Override
                     public void onFinish() {
                         holder.constraintLayout.setVisibility(View.GONE);
-                        holder.arrow.startAnimation(rotate);
+                        Picasso.get().load(R.drawable.left_arrow).into(holder.arrow);
+
                     }
                 };
                 countDownTimerStatic.start();
-
             } else {
+                holder.constraintLayout.startAnimation(down);
                 holder.constraintLayout.setVisibility(View.VISIBLE);
                 holder.arrow.startAnimation(rotate);
-                holder.constraintLayout.startAnimation(down);
+                CountDownTimer countDownTimerStatic = new CountDownTimer(500, 16) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Picasso.get().load(R.drawable.left_arrow_invert).into(holder.arrow);
+                    }
+                };
+                countDownTimerStatic.start();
             }
 
         });
