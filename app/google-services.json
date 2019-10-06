@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "744469585251-bprquiqpemkjfo3k5iqdhgtreg6r0bo3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishabh.concetto2019",
+            "certificate_hash": "ddd68c8c0c1d9b6474ef5388129cbf3befdc622e"
+          }
+        },
+        {
           "client_id": "744469585251-083c312dsnt9325sq9ddfi9l89cjmrds.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
