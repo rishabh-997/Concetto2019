@@ -52,7 +52,7 @@ public class ContactusActivity extends AppCompatActivity {
                 "Head Technical",
                 "7255929901",
                 "neelanshdhan@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.neelansh1));
         list.add(new ContactusModel("Ashutosh Jindal",
                 "Co-Coordinator",
                 "+91-9468858829",
@@ -62,32 +62,32 @@ public class ContactusActivity extends AppCompatActivity {
                 "Head Security",
                 "8507359111",
                 "kumartarun990@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.headsecur));
         list.add(new ContactusModel("Harshit Sethi",
                 "Head Promotion",
                 "7508120516",
                 "harshit8991@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.harshitheadprom));
         list.add(new ContactusModel("Shashwat Raj",
                 "Head Public Relation",
                 "7903592830",
                 "shashwatraj1310@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.prhead));
         list.add(new ContactusModel("M Vamshi Krishna",
                 "Head M&E",
                 "9121561571",
                 "vamshikrishna.maripudi@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.mnehead));
         list.add(new ContactusModel("Donthula Bharadwaj",
                 "Head Designing",
                 "9392427427",
                 "bharadwajdonthula777@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.headdesign));
         list.add(new ContactusModel("Parth hetam",
                 "Head Finance",
                 "7209170501",
                 "parthhetamsaria@me.iitism.ac.in",
-                R.drawable.astro_10));
+                R.mipmap.parth));
 
         Log.i("Pang aphas gaya", ""+list.size());
 
