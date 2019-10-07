@@ -333,6 +333,10 @@ public class EventActivityNew extends AppCompatActivity
             event_branch.setText("RoboISM");
             filter("RoboISM");
 
+        }else if (id == R.id.e_cell){
+            event_branch.setText("E-cell");
+            filter("E-cell");
+
         }
 
 
