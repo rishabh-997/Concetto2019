@@ -67,7 +67,7 @@ public class EventActivity extends AppCompatActivity implements EventContract.vi
         progress.setProgress(0);
         progress.show();
 
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new EventAdapter(this,lists,this, up, down,rotate);
 

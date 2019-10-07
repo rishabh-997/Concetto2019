@@ -45,7 +45,7 @@ public class DeveloperActivity extends AppCompatActivity implements DeveloperAda
         list.add(new Developers("Apoorva Raj Bhadani","https://github.com/ApoorvaRajBhadani/","https://www.linkedin.com/in/apoorva222g/","Electronic and Communication",R.mipmap.apoorva));
 
         adapter = new DeveloperAdapter(this,list,this);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
