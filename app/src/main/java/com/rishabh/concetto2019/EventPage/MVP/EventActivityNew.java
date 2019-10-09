@@ -26,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rishabh.concetto2019.EventPage.Model.EventPageList;
 import com.rishabh.concetto2019.R;
-import com.steelkiwi.library.SlidingSquareLoaderView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 

@@ -50,6 +50,5 @@ dependencies {
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.steelkiwi:sliding-square-loader-view:1.0.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 }

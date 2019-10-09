@@ -34,7 +34,7 @@
         <activity android:name=".WorkshopPage.MVP.WorkshopActivity"
             android:screenOrientation="portrait"
             android:label="Workshops"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme2"/>
         <activity android:name=".EventDetail.MVP.EventDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
@@ -58,6 +58,9 @@
             android:theme="@style/AppTheme2"/>
 
         <activity android:name=".Profile.MVP.ProfileActivity"
+            android:theme="@style/AppTheme2"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Map.MapActivity"
             android:theme="@style/AppTheme2"
             android:screenOrientation="portrait"/>
 
