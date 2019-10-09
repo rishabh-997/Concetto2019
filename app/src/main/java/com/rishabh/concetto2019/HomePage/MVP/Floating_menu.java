@@ -20,6 +20,7 @@ import com.rishabh.concetto2019.Aboutus.AboutUsActivity;
 import com.rishabh.concetto2019.Contactus.ContactusActivity;
 import com.rishabh.concetto2019.Authentication.SignUpPage.MVP.SignupActivity;
 import com.rishabh.concetto2019.Developers.MVP.DeveloperActivity;
+import com.rishabh.concetto2019.Map.MapActivity;
 import com.rishabh.concetto2019.Profile.MVP.ProfileActivity;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.Utilities.SharedPref;
@@ -48,6 +49,9 @@ public class Floating_menu extends Fragment implements NavigationView.OnNavigati
                 case R.id.menu_about:
                     Intent intent = new Intent(getActivity(),AboutUsActivity.class);
                     startActivity(intent);
+                    break;
+                case R.id.menu_map:
+                    startActivity(new Intent(getActivity(), MapActivity.class));
                     break;
                 case R.id.menu_report_bug:
                     Intent i = new Intent(Intent.ACTION_SENDTO);

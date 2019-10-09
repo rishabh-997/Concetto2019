@@ -86,6 +86,11 @@
             android:id="@+id/roboism"
             android:title="RoboISM" />
 
+        <item
+            android:id="@+id/e_cell"
+            android:title="E-cell" />
+
+
 
 
     </group>

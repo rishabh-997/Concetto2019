@@ -48,6 +48,7 @@ public class ContactusActivity extends AppCompatActivity {
                 "+91-9386667625",
                 "princekunal1999@gmail.com",
                 R.mipmap.prince_kunal));
+
         list.add(new ContactusModel("Neelansh Maheshwari",
                 "Head Technical",
                 "7255929901",
@@ -58,6 +59,11 @@ public class ContactusActivity extends AppCompatActivity {
                 "+91-9468858829",
                 "aashutj12@gmail.com",
                 R.drawable.asuthosh));
+        list.add(new ContactusModel("Neelansh Maheshwari",
+                "Head Technical",
+                "7255929901",
+                "neelanshdhan@gmail.com",
+                R.drawable.astro_10));
         list.add(new ContactusModel("Tarun Kumar",
                 "Head Security",
                 "8507359111",
@@ -89,7 +95,6 @@ public class ContactusActivity extends AppCompatActivity {
                 "parthhetamsaria@me.iitism.ac.in",
                 R.mipmap.parth));
 
-        Log.i("Pang aphas gaya", ""+list.size());
 
         adapter = new ContactusAdapter(this,list);
         recyclerView.setHasFixedSize(false);

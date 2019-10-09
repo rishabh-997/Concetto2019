@@ -28,7 +28,6 @@ public class DeveloperActivity extends AppCompatActivity implements DeveloperAda
     @BindView(R.id.kritik_linkedin)
     ImageView kritiklinked;
 
-
     List<Developers> list = new ArrayList<>();
     DeveloperAdapter adapter;
 
@@ -46,7 +45,6 @@ public class DeveloperActivity extends AppCompatActivity implements DeveloperAda
 
         adapter = new DeveloperAdapter(this,list,this);
         recyclerView.setHasFixedSize(false);
-        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 

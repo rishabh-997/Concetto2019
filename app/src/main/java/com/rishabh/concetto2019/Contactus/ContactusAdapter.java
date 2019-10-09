@@ -42,7 +42,11 @@ public class ContactusAdapter extends RecyclerView.Adapter<ContactusAdapter.View
         holder.d_post.setText(model.getD_post());
         holder.d_telephone_number.setText(model.getD_telephone_number());
         holder.d_mail_id.setText(model.getD_mail_id());
-        Picasso.get().load(model.getImgUrl()).into(holder.d_ing);
+        Picasso.get()
+                .load(model.getImgUrl())
+                .resizeDimen(R.dimen.resize_image,R.dimen.resize_image)
+                .centerCrop()
+                .into(holder.d_ing);
     }
 
     @Override
