@@ -57,7 +57,6 @@ public class TechTalkActivity extends AppCompatActivity implements TechTalkContr
 
 
         recycler.setHasFixedSize(false);
-        recycler.setNestedScrollingEnabled(false);
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("Techtalk");

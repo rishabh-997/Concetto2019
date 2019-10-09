@@ -52,7 +52,6 @@ ProgressDialog progress;
         recycler=findViewById(R.id.workshop_recycler);
         //getSupportActionBar().hide();
         recycler.setHasFixedSize(false);
-        recycler.setNestedScrollingEnabled(false);
         list=new ArrayList<>();
         recycler.setLayoutManager(new LinearLayoutManager(this));
 
