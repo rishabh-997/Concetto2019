@@ -48,12 +48,6 @@ public class ContactusActivity extends AppCompatActivity {
                 "+91-9386667625",
                 "princekunal1999@gmail.com",
                 R.mipmap.prince_kunal));
-
-        list.add(new ContactusModel("Neelansh Maheshwari",
-                "Head Technical",
-                "7255929901",
-                "neelanshdhan@gmail.com",
-                R.mipmap.neelansh1));
         list.add(new ContactusModel("Ashutosh Jindal",
                 "Co-Coordinator",
                 "+91-9468858829",
@@ -63,7 +57,7 @@ public class ContactusActivity extends AppCompatActivity {
                 "Head Technical",
                 "7255929901",
                 "neelanshdhan@gmail.com",
-                R.drawable.astro_10));
+                R.mipmap.neelansh1));
         list.add(new ContactusModel("Tarun Kumar",
                 "Head Security",
                 "8507359111",
@@ -89,7 +83,7 @@ public class ContactusActivity extends AppCompatActivity {
                 "9392427427",
                 "bharadwajdonthula777@gmail.com",
                 R.mipmap.headdesign));
-        list.add(new ContactusModel("Parth hetam",
+        list.add(new ContactusModel("Parth Hetam",
                 "Head Finance",
                 "7209170501",
                 "parthhetamsaria@me.iitism.ac.in",

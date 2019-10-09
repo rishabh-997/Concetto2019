@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/contactus" />
 
     <ScrollView
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -61,7 +61,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view4">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
@@ -71,9 +71,11 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
+
+
                 android:paddingTop="30dp"
-                android:paddingBottom="20dp">
+                android:paddingBottom="20dp"
+                app:layout_constraintTop_toTopOf="parent">
 
             </androidx.recyclerview.widget.RecyclerView>
 
@@ -81,32 +83,33 @@
                 android:id="@+id/techical_team"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
                 android:fontFamily="@font/roboto"
                 android:paddingBottom="7dp"
                 android:text="Technical Team"
                 android:textColor="#ffffff"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView"
+                 />
+
             <View
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/whiteline_bg"/>
+                android:background="@drawable/whiteline_bg"
+                app:layout_constraintTop_toBottomOf="@+id/techical_team"
+                />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_tech_team"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
                 android:paddingTop="30dp"
-                android:paddingBottom="20dp"/>
+                android:paddingBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/view5"
+               />
 
 
-
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 
