@@ -48,7 +48,7 @@ dependencies {
     implementation 'com.ss.bannerslider:bannerslider:2.0.0'
     implementation 'com.mxn.soul:flowingdrawer-core:2.1.0'
     implementation 'com.nineoldandroids:library:2.4.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta04'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 }
