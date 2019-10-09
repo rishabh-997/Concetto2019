@@ -2,6 +2,7 @@ package com.rishabh.concetto2019.EventPage.MVP;
 
 import android.content.Context;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +55,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         holder.organizer_phone2.setText(model.getOrganizer_phone2());
         holder.prize.setText(model.getPrize());
         Picasso.get().load(model.getUrl()).into(holder.cover_pic);
-
-
-
 
         holder.arrow.setOnClickListener(v -> {
 

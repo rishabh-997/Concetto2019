@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.rishabh.concetto2019.Developers.Model.Developers;
 import com.rishabh.concetto2019.R;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -45,7 +46,11 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
         Developers model = list.get(position);
         holder.dev_name.setText(model.getName());
         holder.dev_branch.setText(model.getBranch());
-        holder.dev_image.setImageResource(model.getId());
+        Picasso.get()
+                .load(model.getId())
+                .resizeDimen(R.dimen.resize_image,R.dimen.resize_image)
+                .centerCrop()
+                .into(holder.dev_image);
     }
 
     @Override
