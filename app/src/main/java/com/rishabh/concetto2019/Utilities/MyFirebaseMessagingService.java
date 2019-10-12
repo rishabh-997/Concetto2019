@@ -44,7 +44,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             PendingIntent intent = PendingIntent.getActivity(this,0,notificationIntent,0);
 
             Notification notification = new NotificationCompat.Builder(this, CHANNEL_PAYMENT_ID)
-                    .setSmallIcon(R.mipmap.letter_c)
+                    .setSmallIcon(R.mipmap.c)
                     .setContentTitle(remoteMessage.getNotification().getTitle())
                     .setContentText(remoteMessage.getNotification().getBody())
                     .setPriority(NotificationCompat.PRIORITY_HIGH)

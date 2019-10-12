@@ -1,7 +1,10 @@
 package com.rishabh.concetto2019.HomePage.MVP;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -220,7 +223,27 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
             fm3.beginTransaction().hide(fragment3).commit();
         }
         else{
-              super.onBackPressed();
+
+            final AlertDialog alertDialog=new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Exit");
+            alertDialog.setMessage("Are You Sure You Want To Exit ?");
+            alertDialog.setCancelable(false);
+
+            alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which)
+                {
+                    alertDialog.dismiss();
+                    finish();
+                }
+            });
+            alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog.show();
         }
     }
 }

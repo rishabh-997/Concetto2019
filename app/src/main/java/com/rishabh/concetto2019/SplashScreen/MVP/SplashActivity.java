@@ -52,6 +52,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     ProgressBar progressBar;
 
     private static int WELCOME_TIMEOUT = 500;
+    public static String url = "https://play.google.com/store/apps/details?id=com.rishabh.concetto2019";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -116,7 +117,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
             @Override
             public void onClick(DialogInterface dialog, int which)
             {
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.rishabh.sorpluserend"));
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
                 alertDialog.dismiss();
                 finish();
