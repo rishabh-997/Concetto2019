@@ -89,7 +89,9 @@
         <item
             android:id="@+id/e_cell"
             android:title="E-cell" />
-
+        <item
+            android:id="@+id/ciie"
+            android:title="CIIE" />
 
 
 

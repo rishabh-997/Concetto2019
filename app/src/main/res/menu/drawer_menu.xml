@@ -18,7 +18,7 @@
         <item
             android:id="@+id/menu_contactus"
             android:icon="@drawable/telephone"
-            android:title="Contact us" />
+            android:title="Contact Us" />
         <item
             android:id="@+id/menu_developers"
             android:icon="@drawable/tool"

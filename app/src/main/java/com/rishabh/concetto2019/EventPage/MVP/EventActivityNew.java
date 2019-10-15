@@ -336,6 +336,10 @@ public class EventActivityNew extends AppCompatActivity
             filter("E-cell");
 
         }
+        else if (id == R.id.ciie) {
+            event_branch.setText("CIIE");
+            filter("CIIE");
+        }
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
