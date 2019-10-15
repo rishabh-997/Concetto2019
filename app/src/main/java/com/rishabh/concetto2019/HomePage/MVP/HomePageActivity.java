@@ -171,7 +171,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                 break;
             case MotionEvent.ACTION_UP:
                 if(lastAction == MotionEvent.ACTION_DOWN)
-                    Toast.makeText(this, "swipe to open", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Swipe Left to open", Toast.LENGTH_SHORT).show();
                 else {
                     if (retreat == 1) {
                         v.setX(original + dx);

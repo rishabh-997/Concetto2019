@@ -1,23 +1,52 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1F1F35">
+
+        <ImageView
+            android:id="@+id/header_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/astro_11"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/hi_astro_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1F1F35"
+            android:paddingBottom="4dp"
+            android:text="HI ASTRONAUT!"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/vNavigation"
-        android:layout_marginBottom="120dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:background="@android:color/transparent"
-        app:headerLayout="@layout/view_global_menu_header"
         app:itemIconTint="#000000"
         app:itemTextAppearance="@font/roboto"
         app:itemTextColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/drawer_menu">
+        app:menu="@menu/drawer_menu"
+        android:layout_above="@id/linearLayout"
+        android:layout_below="@id/constraintLayout">
 
 
     </com.google.android.material.navigation.NavigationView>
@@ -27,10 +56,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:id="@+id/facebook_hyperlink_imageview"
@@ -54,4 +82,4 @@
             android:layout_weight="1"
             android:src="@drawable/instagram_icon" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
