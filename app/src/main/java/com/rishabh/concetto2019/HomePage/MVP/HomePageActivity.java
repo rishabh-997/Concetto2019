@@ -26,6 +26,7 @@ import com.mxn.soul.flowingdrawer_core.ElasticDrawer;
 import com.mxn.soul.flowingdrawer_core.FlowingDrawer;
 import com.rishabh.concetto2019.EventPage.MVP.EventActivity;
 import com.rishabh.concetto2019.EventPage.MVP.EventActivityNew;
+import com.rishabh.concetto2019.Informals.MVP.InformalActivity;
 import com.rishabh.concetto2019.R;
 import com.rishabh.concetto2019.TechTalkPage.MVP.TechTalkActivity;
 import com.rishabh.concetto2019.WorkshopPage.MVP.WorkshopActivity;
@@ -47,6 +48,8 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
     TextView techtalk;
     @BindView(R.id.button_workshop)
     TextView workshop;
+    @BindView(R.id.button_informal)
+    TextView informal;
     @BindView(R.id.drawerlayout)
     FlowingDrawer mDrawer;
     @BindView(R.id.toolbar)
@@ -109,6 +112,7 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
         event.setOnTouchListener(this);
         techtalk.setOnTouchListener(this);
         workshop.setOnTouchListener(this);
+        informal.setOnTouchListener(this);
 
         toolbar.setNavigationIcon(R.drawable.hamburgericon);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -187,6 +191,10 @@ public class HomePageActivity extends AppCompatActivity implements HomePageContr
                         } else if (v.getId() == R.id.button_techtalks) {
 
                             startActivity(new Intent(this, TechTalkActivity.class));
+                            overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
+                        } else if(v.getId() == R.id.button_informal) {
+
+                            startActivity(new Intent(this, InformalActivity.class));
                             overridePendingTransition(R.anim.slidein_to_left, R.anim.slideout_to_left);
                         }
                         v.setX(original + dx);

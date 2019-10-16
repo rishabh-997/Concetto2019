@@ -152,6 +152,25 @@
                 android:gravity="center"
                 android:textSize="18sp" />
 
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/button_techtalks"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:background="#5A5A5A" />
+
+            <Button
+                android:id="@+id/button_informal"
+                android:layout_width="225dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/button_techtalks"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="16dp"
+                android:background="@mipmap/techtalk_slider"
+                android:gravity="center"
+                android:textSize="18sp" />
+
             <ImageView
                 android:id="@+id/moon_image"
                 android:layout_width="700dp"

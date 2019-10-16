@@ -2,7 +2,7 @@ package com.rishabh.concetto2019.WorkshopPage.Model;
 
 public class WorkshopModel {
 
-     String about;
+    String about;
     String date;
     String time;
     String location;
